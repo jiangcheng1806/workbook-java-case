@@ -33,4 +33,19 @@ LOCAL_VARIABLE(局部变量声明)
 @Target({ElementType.METHOD,ElementType.TYPE})
 public @interface MyAnnotation {
 
+	String color() default "red";
+	String value();
+	
+	//数组
+	int[] arr() default {1,2,3};
+	
+	//枚举
+	EnumTest.TrafficLamp lamp() default EnumTest.TrafficLamp.GREEN;
+	
+	//注解类
+	MetaAnnotation annotation() default @MetaAnnotation("startup-jdk");
+	
+	//class类
+	Class clazz() default System.class;
+	
 }
