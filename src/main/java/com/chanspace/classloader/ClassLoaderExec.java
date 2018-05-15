@@ -1,4 +1,4 @@
- package com.chanspace;
+ package com.chanspace.classloader;
 
 public class ClassLoaderExec {
 	public static void main(String[] args) {

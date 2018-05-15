@@ -1,4 +1,4 @@
-package com.chanspace;
+package com.chanspace.classloader;
 
 import java.util.Date;
 //定义一个测试类，继承Date，便于使用时加载

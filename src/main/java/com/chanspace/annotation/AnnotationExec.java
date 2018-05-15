@@ -1,6 +1,8 @@
-package com.chanspace;
+package com.chanspace.annotation;
 
 import java.lang.reflect.Method;
+
+import com.chanspace.annotation.EnumTest.TrafficLamp;
 
 @MyAnnotation(lamp=EnumTest.TrafficLamp.YELLOW,value="startup-jdk",clazz=AnnotationExec.class,annotation=@MetaAnnotation("startup-jdk1"))
 public class AnnotationExec {

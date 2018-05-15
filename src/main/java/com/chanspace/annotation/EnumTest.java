@@ -1,4 +1,4 @@
-package com.chanspace;
+package com.chanspace.annotation;
 
 public class EnumTest {
 	

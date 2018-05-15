@@ -1,4 +1,4 @@
-package com.chanspace;
+package com.chanspace.classloader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
