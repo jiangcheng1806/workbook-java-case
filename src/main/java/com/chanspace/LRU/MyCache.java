@@ -77,7 +77,7 @@ public class MyCache{
     }
 
     //获取指定cache信息
-    public Object getCacheItem(Object key){
+    public synchronized Object getCacheItem(Object key){
         if (cacheItems.containsKey(key)){
             return cacheItems.get(key);
         }
@@ -85,7 +85,7 @@ public class MyCache{
     }
 
     //存放cache信息,默认永久缓存
-    public void putCacheItem(Object key,Object value){
+    public static synchronized void putCacheItem(Object key,Object value){
         if (!cacheItems.containsKey(key)){
             cacheItems.put(key,value);
         }
@@ -175,13 +175,14 @@ public class MyCache{
 
     public static void main(String[] args) {
         MyCache myCache = MyCache.getInstance();
-        myCache.refresh();
+        /*myCache.refresh();
         Map map = myCache.getCacheItems();
         Iterator it = map.keySet().iterator();
         while (it.hasNext()){
             Object key = it.next();
             System.out.println("key:"+key+",value:"+map.get(key));
-        }
+        }*/
+
     }
 }
 
