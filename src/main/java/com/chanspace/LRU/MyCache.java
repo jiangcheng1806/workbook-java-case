@@ -174,7 +174,7 @@ public class MyCache{
     }
 
     public static void main(String[] args) {
-        MyCache myCache = MyCache.getInstance();
+        MyCache myCache1 = MyCache.getInstance();
         /*myCache.refresh();
         Map map = myCache.getCacheItems();
         Iterator it = map.keySet().iterator();
@@ -182,7 +182,13 @@ public class MyCache{
             Object key = it.next();
             System.out.println("key:"+key+",value:"+map.get(key));
         }*/
+        CacheConf cacheConf = new CacheConf(true);
+        cacheConf.setBeginTime(System.currentTimeMillis());
+        cacheConf.setDurableTime(60);
+        myCache.putCacheItem("mykey","myvalue",cacheConf);
 
+        MyCache myCache2 = MyCache.getInstance();
+        System.out.println("num:"+myCache2.getSize());
     }
 }
 
