@@ -65,7 +65,7 @@ public class MyCache{
             Object key = it.next();
             Object value = mockMap.get(key);
             if (key != null && value != null){
-                myCache.putCacheItem(key,value);
+                cacheItems.put(key,value);
             }
         }
         logger.info("After the refresh Cache size = "+ myCache.getSize());
@@ -77,7 +77,7 @@ public class MyCache{
     }
 
     //获取指定cache信息
-    public synchronized Object getCacheItem(Object key){
+    public synchronized Object get(Object key){
         if (cacheItems.containsKey(key)){
             return cacheItems.get(key);
         }
@@ -85,7 +85,7 @@ public class MyCache{
     }
 
     //存放cache信息,默认永久缓存
-    public static synchronized void putCacheItem(Object key,Object value){
+    public static synchronized void add(Object key,Object value){
         if (!cacheItems.containsKey(key)){
             cacheItems.put(key,value);
         }
@@ -95,7 +95,7 @@ public class MyCache{
     }
 
     //存放cache信息
-    public void putCacheItem(Object key,Object value,CacheConf cacheConf){
+    public void add(Object key,Object value,CacheConf cacheConf){
         if (!cacheItems.containsKey(key)){
             cacheItems.put(key,value);
         }
@@ -107,7 +107,7 @@ public class MyCache{
     }
 
     //删除cache信息
-    public boolean removeCacheItem(Object key){
+    public boolean remove(Object key){
         boolean flag = false;
         try {
             cacheConfs.remove(key);
@@ -120,12 +120,12 @@ public class MyCache{
     }
 
     //获取所有cache信息
-    public Map<Object,Object> getCacheItems(){
+    public Map<Object,Object> getAll(){
         return cacheItems;
     }
 
     //设置cache内容
-    public void setCacheItems(Map<Object, Object> cacheItems) {
+    public void setAll(Map<Object, Object> cacheItems) {
         cacheItems = cacheItems;
     }
 
@@ -147,7 +147,7 @@ public class MyCache{
                 Iterator keyIt = keySet.iterator();
                 while (keyIt.hasNext()){
                     Object key = keyIt.next();
-                    CacheConf cacheConf = (CacheConf) myCache.getCacheItem(key);
+                    CacheConf cacheConf = (CacheConf) cacheConfs.get(key);
                     if (!cacheConf.isForever()){
                         if (System.currentTimeMillis() - cacheConf.getBeginTime() >= cacheConf.getDurableTime()*1000){
                             tempSet.add(key);
@@ -185,7 +185,7 @@ public class MyCache{
         CacheConf cacheConf = new CacheConf(true);
         cacheConf.setBeginTime(System.currentTimeMillis());
         cacheConf.setDurableTime(60);
-        myCache.putCacheItem("mykey","myvalue",cacheConf);
+        myCache.add("mykey","myvalue",cacheConf);
 
         MyCache myCache2 = MyCache.getInstance();
         System.out.println("num:"+myCache2.getSize());
