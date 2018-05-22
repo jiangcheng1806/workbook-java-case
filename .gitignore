@@ -28,9 +28,3 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-
-target/*
-enter/target/*
-user/target/*
-wms/target/*
-util/target/*
