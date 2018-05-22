@@ -23,7 +23,7 @@ public class MyCache{
     //单例
     private static MyCache myCache;
 
-    private static Map<Object,Object> cacheItems;
+    private static Map<Object,  Object> cacheItems;
     private static Map<Object,Object> cacheConfs;
 
     //单例私有化构造函数
@@ -82,6 +82,16 @@ public class MyCache{
             return cacheItems.get(key);
         }
         return null;
+    }
+
+    //没有则插入
+    public synchronized Object retrieveLong(Object key){
+        return cacheItems.computeIfAbsent(key,this::computeLong);
+    }
+
+    //模拟代价很高的计算
+    public Object computeLong(Object value){
+        return (Long) value*(Long) value;
     }
 
     //存放cache信息,默认永久缓存
@@ -189,6 +199,7 @@ public class MyCache{
 
         MyCache myCache2 = MyCache.getInstance();
         System.out.println("num:"+myCache2.getSize());
+        System.out.println("aa"+myCache2.retrieveLong(112L));
     }
 }
 
