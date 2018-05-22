@@ -9,6 +9,12 @@
 .settings
 .springBeans
 
+### Eclipse ###
+/target/
+/.settings/
+/.project
+/.classpath
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
