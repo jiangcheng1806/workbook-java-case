@@ -2,9 +2,8 @@ package com.chanspace.LRU;
 
 import org.apache.log4j.Logger;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -24,11 +23,13 @@ public class MyCache{
     //单例
     private static MyCache myCache;
 
-    private Map<Object,Object> cacheItems;
+    private static Map<Object,Object> cacheItems;
+    private static Map<Object,Object> cacheConfs;
 
     //单例私有化构造函数
     private MyCache(){
         cacheItems = new ConcurrentHashMap<>();
+        cacheConfs = new ConcurrentHashMap<>();
     }
 
     //获取唯一实例
@@ -47,6 +48,8 @@ public class MyCache{
     public void clearCacheItems(){
         cacheItems.clear();
     }
+
+
 
     //刷新cache
     public void refresh(){
@@ -81,11 +84,39 @@ public class MyCache{
         return null;
     }
 
-    //存放cache信息
+    //存放cache信息,默认永久缓存
     public void putCacheItem(Object key,Object value){
         if (!cacheItems.containsKey(key)){
             cacheItems.put(key,value);
         }
+        if (!cacheConfs.containsKey(key)){
+            cacheConfs.put(key,new CacheConf(true));
+        }
+    }
+
+    //存放cache信息
+    public void putCacheItem(Object key,Object value,CacheConf cacheConf){
+        if (!cacheItems.containsKey(key)){
+            cacheItems.put(key,value);
+        }
+        if (!cacheConfs.containsKey(key)){
+            cacheConfs.put(key,cacheConf);
+        } else {
+            logger.info("配置已存在不新增配置");
+        }
+    }
+
+    //删除cache信息
+    public boolean removeCacheItem(Object key){
+        boolean flag = false;
+        try {
+            cacheConfs.remove(key);
+            cacheItems.remove(key);
+            flag = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
     }
 
     //获取所有cache信息
@@ -93,8 +124,9 @@ public class MyCache{
         return cacheItems;
     }
 
+    //设置cache内容
     public void setCacheItems(Map<Object, Object> cacheItems) {
-        this.cacheItems = cacheItems;
+        cacheItems = cacheItems;
     }
 
     //mock一个map
@@ -106,5 +138,87 @@ public class MyCache{
         return mockMap;
     }
 
+    private static class ClearCache extends Thread{
+        @Override
+        public void run() {
+            while (true){
+                Set tempSet = new HashSet();
+                Set keySet = cacheConfs.keySet();
+                Iterator keyIt = keySet.iterator();
+                while (keyIt.hasNext()){
+                    Object key = keyIt.next();
+                    CacheConf cacheConf = (CacheConf) myCache.getCacheItem(key);
+                    if (!cacheConf.isForever()){
+                        if (System.currentTimeMillis() - cacheConf.getBeginTime() >= cacheConf.getDurableTime()*1000){
+                            tempSet.add(key);
+                        }
+                    }
+                }
+                //清除
+                Iterator tIt = tempSet.iterator();
+                while (tIt.hasNext()){
+                    Object key = tIt.next();
+                    cacheItems.remove(key);
+                    cacheConfs.remove(key);
+                }
+                logger.info("now thread================>"
+                        + myCache.getSize());
+                // 休息
+                try {
+                    Thread.sleep(60 * 1000L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
+    public static void main(String[] args) {
+        MyCache myCache = MyCache.getInstance();
+        myCache.refresh();
+        Map map = myCache.getCacheItems();
+        Iterator it = map.keySet().iterator();
+        while (it.hasNext()){
+            Object key = it.next();
+            System.out.println("key:"+key+",value:"+map.get(key));
+        }
+    }
+}
+
+/**
+ * 配置类
+ */
+class CacheConf implements Serializable {
+
+    private long beginTime;//缓存开始时间
+    private boolean isForever;//是否永久
+    private long durableTime;//持续时间
+
+    public CacheConf(boolean isForever) {
+        this.isForever = isForever;
+    }
+
+    public long getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(long beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public boolean isForever() {
+        return isForever;
+    }
+
+    public void setForever(boolean forever) {
+        isForever = forever;
+    }
+
+    public long getDurableTime() {
+        return durableTime;
+    }
+
+    public void setDurableTime(long durableTime) {
+        this.durableTime = durableTime;
+    }
 }
