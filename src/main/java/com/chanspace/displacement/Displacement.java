@@ -13,11 +13,12 @@ public class Displacement {
     public static void main(String[] args) {
         System.out.println(Integer.toBinaryString(6297));
         System.out.println(Integer.toBinaryString(-6297));
-        System.out.println(Integer.toBinaryString(6297>>5));
-        System.out.println(Integer.toBinaryString(-6297>>5));
-        System.out.println(Integer.toBinaryString(6297>>>5));
-        System.out.println(Integer.toBinaryString(-6297>>>5));
-        System.out.println(Integer.toBinaryString(6297<<5));
-        System.out.println(Integer.toBinaryString(-6297<<5));
+
+        System.out.println(Integer.toBinaryString(6297>>5));//右移左边补0
+        System.out.println(Integer.toBinaryString(-6297>>5));//右移左边补1
+        System.out.println(Integer.toBinaryString(6297>>>5));//右移左边补0
+        System.out.println(Integer.toBinaryString(-6297>>>5));//右移左边补0
+        System.out.println(Integer.toBinaryString(6297<<5));//左移右边补0
+        System.out.println(Integer.toBinaryString(-6297<<5));//左移右边补0
     }
 }
