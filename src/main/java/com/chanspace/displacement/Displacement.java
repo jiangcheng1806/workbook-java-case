@@ -16,8 +16,8 @@ public class Displacement {
 
         System.out.println(Integer.toBinaryString(6297>>5));//右移左边补0
         System.out.println(Integer.toBinaryString(-6297>>5));//右移左边补1
-        System.out.println(Integer.toBinaryString(6297>>>5));//右移左边补0
-        System.out.println(Integer.toBinaryString(-6297>>>5));//右移左边补0
+        System.out.println(Integer.toBinaryString(6297>>>5));//右移左边补0 无符号右移
+        System.out.println(Integer.toBinaryString(-6297>>>5));//右移左边补0 无符号右移
         System.out.println(Integer.toBinaryString(6297<<5));//左移右边补0
         System.out.println(Integer.toBinaryString(-6297<<5));//左移右边补0
     }
