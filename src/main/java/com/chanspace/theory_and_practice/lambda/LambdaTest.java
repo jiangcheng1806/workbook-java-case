@@ -1,4 +1,4 @@
-package com.chanspace.lambda;
+package com.chanspace.theory_and_practice.lambda;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;

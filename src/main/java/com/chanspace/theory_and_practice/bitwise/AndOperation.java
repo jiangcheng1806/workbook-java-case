@@ -1,4 +1,4 @@
-package com.chanspace.bitwise;
+package com.chanspace.theory_and_practice.bitwise;
 
 /**
  * 类名称：AndOperation<br>
