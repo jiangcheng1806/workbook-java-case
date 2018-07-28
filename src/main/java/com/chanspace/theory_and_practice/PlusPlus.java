@@ -1,4 +1,4 @@
-package com.chanspace.unary;
+package com.chanspace.theory_and_practice;
 
 /**
  * 类名称：PlusPlus<br>
@@ -20,7 +20,7 @@ public class PlusPlus {
 
         int a1 = 10;
         int b1 = 10;
-        int sum1 = a1+++b1;
+        int sum1 = a1+++b1;//相当于a1++ +b1
         System.out.println("a1 = " + a1 + ",b="+b1+",sum1 =" + sum1);
     }
 }
