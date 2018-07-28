@@ -1,4 +1,4 @@
-package com.chanspace.LRU;
+package com.chanspace.theory_and_practice;
 
 import org.apache.log4j.Logger;
 

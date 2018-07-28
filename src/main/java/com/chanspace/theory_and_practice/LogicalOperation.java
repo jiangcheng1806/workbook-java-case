@@ -1,4 +1,4 @@
-package com.chanspace.logical;
+package com.chanspace.theory_and_practice;
 
 /**
  * 类名称：LogicalOperation<br>

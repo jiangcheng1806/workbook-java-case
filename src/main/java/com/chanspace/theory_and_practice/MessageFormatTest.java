@@ -1,4 +1,4 @@
-package com.chanspace.format;
+package com.chanspace.theory_and_practice;
 
 import java.text.MessageFormat;
 import java.util.Date;

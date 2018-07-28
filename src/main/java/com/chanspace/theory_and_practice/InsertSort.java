@@ -1,4 +1,4 @@
-package com.chanspace.arraysort;
+package com.chanspace.theory_and_practice;
 
 import java.util.Arrays;
 

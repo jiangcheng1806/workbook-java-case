@@ -1,4 +1,4 @@
-package com.chanspace.arithmetic;
+package com.chanspace.theory_and_practice;
 
 /**
  * 类名称：Arithmetic<br>
