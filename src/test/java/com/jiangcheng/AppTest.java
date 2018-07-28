@@ -1,4 +1,4 @@
-package com.chanspace;
+package com.jiangcheng;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
