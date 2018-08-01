@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  * 类名称：PrinterManager<br>
- * 类描述：信号量<br>
+ * 类描述：信号量 Semaphore<br>
  * 创建时间：2018年08月01日<br>
  *
  * @author jiangcheng

@@ -4,7 +4,7 @@ import java.util.concurrent.Exchanger;
 
 /**
  * 类名称：SendAndReceiver<br>
- * 类描述：对象交换器<br>
+ * 类描述：对象交换器  主要是Exchanger类   <br>
  * 创建时间：2018年08月01日<br>
  *
  * @author jiangcheng

@@ -7,7 +7,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * 类名称：PrimeNumber<br>
- * 类描述：循环屏障<br>
+ * 类描述：循环屏障   主要是CyclicBarrier 类<br>
  * 创建时间：2018年08月01日<br>
  *
  * @author jiangcheng

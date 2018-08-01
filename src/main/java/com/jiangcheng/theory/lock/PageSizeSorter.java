@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * 类名称：PageSizeSorter<br>
- * 类描述：倒数闸门<br>
+ * 类描述：倒数闸门  CountDownLatch<br>
  * 创建时间：2018年08月01日<br>
  *
  * @author jiangcheng
