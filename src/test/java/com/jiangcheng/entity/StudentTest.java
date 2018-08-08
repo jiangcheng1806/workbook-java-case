@@ -3,8 +3,6 @@ package com.jiangcheng.entity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import static org.junit.Assert.*;
-
 /**
  * 类名称：StudentTest<br>
  * 类描述：<br>
@@ -32,9 +30,9 @@ public class StudentTest {
 
 
 
-        User user = (User) applicationContext.getBean("user");
-        //User user1 = (User) applicationContext.getBean("user");
-        //User user2 = (User) applicationContext.getBean("user2");
+        UserBO user = (UserBO) applicationContext.getBean("user");
+        //UserBO user1 = (UserBO) applicationContext.getBean("user");
+        //UserBO user2 = (UserBO) applicationContext.getBean("user2");
         //user的scope为prototype时是false,默认是true
         //System.out.println(user == user1);
         //System.out.println(user2);

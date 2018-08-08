@@ -52,21 +52,21 @@
     </bean>
 
     <!--创建user对象-->
-    <!--<bean id="user" class="com.jiangcheng.entity.User" scope="prototype">-->
-    <!--<bean id="user" class="com.jiangcheng.entity.User" depends-on="car">
+    <!--<bean id="user" class="com.jiangcheng.entity.UserBO" scope="prototype">-->
+    <!--<bean id="user" class="com.jiangcheng.entity.UserBO" depends-on="car">
         <property name="id" value="1"></property>
         <property name="name" value="张三"></property>
         <property name="age" value="23"></property>
     </bean>-->
 
-    <!--<bean id="user2" class="com.jiangcheng.entity.User" parent="user">
+    <!--<bean id="user2" class="com.jiangcheng.entity.UserBO" parent="user">
         &lt;!&ndash; 覆盖name属性 &ndash;&gt;
         <property name="name" value="李四"></property>
     </bean>-->
 
 
     <!--测试使用p命名空间-->
-    <!--<bean id="user3" class="com.jiangcheng.entity.User" p:id="1" p:name="王五" p:age="25" p:car-ref="car1"></bean>
+    <!--<bean id="user3" class="com.jiangcheng.entity.UserBO" p:id="1" p:name="王五" p:age="25" p:car-ref="car1"></bean>
     <bean id="car1" class="com.jiangcheng.entity.Car" p:num="2" p:brand="宝马"></bean>-->
 
 
@@ -106,5 +106,19 @@
         <property name="id" value="1"></property>
         <property name="name" value="张三"></property>
     </bean>
+
+    <!-- 配置UserController -->
+    <bean id="userController" class="com.jiangcheng.controller.UserController">
+        <property name="userService" ref="userService"></property>
+    </bean>
+
+    <!-- 配置UserService -->
+    <bean id="userService" class="com.jiangcheng.service.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO"></property>
+    </bean>
+
+    <!-- 配置UserDAO -->
+    <bean id="userDAO" class="com.jiangcheng.dao.impl.UserDAOImpl"></bean>
+
 
 </beans>
