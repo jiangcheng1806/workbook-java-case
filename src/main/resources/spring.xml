@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--配置student对象-->
 
@@ -62,9 +64,15 @@
         <property name="name" value="李四"></property>
     </bean>
 
+
+    <!--测试使用p命名空间-->
+    <bean id="user3" class="com.jiangcheng.entity.User" p:id="1" p:name="王五" p:age="25" p:car-ref="car1"></bean>
+    <bean id="car1" class="com.jiangcheng.entity.Car" p:num="2" p:brand="宝马"></bean>
+
+
     <!--创建car对象-->
     <bean id="car" class="com.jiangcheng.entity.Car">
-        <property name="id" value="1"></property>
+        <property name="num" value="1"></property>
         <property name="brand" value="宝马"></property>
     </bean>
 
@@ -79,6 +87,8 @@
         <property name="jdbcUrl" value="${url}"></property>
     </bean>
 
-    <!---->
-
+    <!-- 配置静态工厂创建car对象 -->
+    <bean id="car2" class="com.jiangcheng.factory.StaticFactory" factory-method="getCar">
+        <constructor-arg value="1"></constructor-arg>
+    </bean>
 </beans>

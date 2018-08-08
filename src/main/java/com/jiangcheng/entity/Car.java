@@ -1,6 +1,8 @@
 package com.jiangcheng.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 类名称：Car<br>
@@ -11,10 +13,16 @@ import lombok.Data;
  * @version 1.0.0
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Car {
-    private int id;
+    private int num;
     private String brand;
-    public Car(){
+    /*public Car(){
         System.out.println("创建了Car对象");
+    }*/
+    @Override
+    public String toString() {
+        return "Car [num=" + num + ", brand=" + brand + "]";
     }
 }
