@@ -2,6 +2,7 @@ package com.jiangcheng.dao.impl;
 
 import com.jiangcheng.bean.User;
 import com.jiangcheng.dao.UserDAO;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +15,7 @@ import java.util.Map;
  * @author jiangcheng
  * @version 1.0.0
  */
-
+@Repository
 public class UserDAOImpl implements UserDAO {
 
     private static Map<Integer,User> users;

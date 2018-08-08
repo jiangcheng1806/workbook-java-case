@@ -2,6 +2,9 @@ package com.jiangcheng.controller;
 
 import com.jiangcheng.bean.User;
 import com.jiangcheng.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 
 /**
  * 类名称：UserController<br>
@@ -11,18 +14,21 @@ import com.jiangcheng.service.UserService;
  * @author jiangcheng
  * @version 1.0.0
  */
-
+@Controller
 public class UserController {
 
+    @Autowired
+    @Qualifier("userService")//需要配合在service注解处标上名称
     private UserService userService;
 
-    public UserService getUserService() {
+    //开启注解取消xml
+    /*public UserService getUserService() {
         return userService;
     }
 
     public void setUserService(UserService userService) {
         this.userService = userService;
-    }
+    }*/
 
     public User getUserById(int id){
         return userService.getUserById(id);

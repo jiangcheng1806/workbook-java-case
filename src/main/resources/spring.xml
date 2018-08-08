@@ -108,17 +108,20 @@
     </bean>
 
     <!-- 配置UserController -->
-    <bean id="userController" class="com.jiangcheng.controller.UserController">
+    <!--<bean id="userController" class="com.jiangcheng.controller.UserController">
         <property name="userService" ref="userService"></property>
-    </bean>
+    </bean>-->
 
     <!-- 配置UserService -->
-    <bean id="userService" class="com.jiangcheng.service.impl.UserServiceImpl">
+    <!--<bean id="userService" class="com.jiangcheng.service.impl.UserServiceImpl">
         <property name="userDAO" ref="userDAO"></property>
-    </bean>
+    </bean>-->
 
     <!-- 配置UserDAO -->
-    <bean id="userDAO" class="com.jiangcheng.dao.impl.UserDAOImpl"></bean>
+    <!--<bean id="userDAO" class="com.jiangcheng.dao.impl.UserDAOImpl"></bean>-->
+
+    <!-- 将类扫描到IOC容器中 -->
+    <context:component-scan base-package="com.jiangcheng"></context:component-scan>
 
 
 </beans>

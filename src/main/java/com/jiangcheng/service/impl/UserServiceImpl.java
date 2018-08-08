@@ -3,6 +3,8 @@ package com.jiangcheng.service.impl;
 import com.jiangcheng.bean.User;
 import com.jiangcheng.dao.UserDAO;
 import com.jiangcheng.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * 类名称：UserServiceImpl<br>
@@ -12,18 +14,20 @@ import com.jiangcheng.service.UserService;
  * @author jiangcheng
  * @version 1.0.0
  */
-
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
+    @Autowired
     private UserDAO userDAO;
 
-    public UserDAO getUserDAO(){
+    //开启注解取消xml
+    /*public UserDAO getUserDAO(){
         return userDAO;
     }
 
     public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
-    }
+    }*/
 
     @Override
     public User getUserById(int id) {
