@@ -1,6 +1,4 @@
-package com.jiangcheng.aop;
-
-import static org.junit.Assert.*;
+package com.jiangcheng.theory.aop;
 
 /**
  * 类名称：CalImplTest<br>
