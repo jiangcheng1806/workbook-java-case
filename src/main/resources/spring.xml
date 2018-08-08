@@ -53,21 +53,21 @@
 
     <!--创建user对象-->
     <!--<bean id="user" class="com.jiangcheng.entity.User" scope="prototype">-->
-    <bean id="user" class="com.jiangcheng.entity.User" depends-on="car">
+    <!--<bean id="user" class="com.jiangcheng.entity.User" depends-on="car">
         <property name="id" value="1"></property>
         <property name="name" value="张三"></property>
         <property name="age" value="23"></property>
-    </bean>
+    </bean>-->
 
-    <bean id="user2" class="com.jiangcheng.entity.User" parent="user">
-        <!-- 覆盖name属性 -->
+    <!--<bean id="user2" class="com.jiangcheng.entity.User" parent="user">
+        &lt;!&ndash; 覆盖name属性 &ndash;&gt;
         <property name="name" value="李四"></property>
-    </bean>
+    </bean>-->
 
 
     <!--测试使用p命名空间-->
-    <bean id="user3" class="com.jiangcheng.entity.User" p:id="1" p:name="王五" p:age="25" p:car-ref="car1"></bean>
-    <bean id="car1" class="com.jiangcheng.entity.Car" p:num="2" p:brand="宝马"></bean>
+    <!--<bean id="user3" class="com.jiangcheng.entity.User" p:id="1" p:name="王五" p:age="25" p:car-ref="car1"></bean>
+    <bean id="car1" class="com.jiangcheng.entity.Car" p:num="2" p:brand="宝马"></bean>-->
 
 
     <!--创建car对象-->
@@ -88,16 +88,23 @@
     </bean>
 
     <!-- 配置静态工厂创建car对象 -->
-    <bean id="car2" class="com.jiangcheng.factory.StaticFactory" factory-method="getCar">
+    <!--<bean id="car2" class="com.jiangcheng.factory.StaticFactory" factory-method="getCar">
         <constructor-arg value="1"></constructor-arg>
-    </bean>
+    </bean>-->
 
     <!-- 配置实例工厂对象 -->
     <bean id="carFactory" class="com.jiangcheng.factory.InstanceCarFactory"></bean>
 
     <!-- 通过实例工厂对象创建car对象 -->
-    <bean id="car3" factory-bean="carFactory" factory-method="getCar">
+    <!--<bean id="car3" factory-bean="carFactory" factory-method="getCar">
         <constructor-arg value="2"></constructor-arg>
+    </bean>-->
+
+    <!--创建person对象-->
+    <!--<bean id="person" class="com.jiangcheng.entity.Person" autowire="byName">-->
+    <bean id="person" class="com.jiangcheng.entity.Person" autowire="byType">
+        <property name="id" value="1"></property>
+        <property name="name" value="张三"></property>
     </bean>
 
 </beans>
