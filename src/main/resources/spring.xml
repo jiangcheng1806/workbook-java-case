@@ -91,4 +91,13 @@
     <bean id="car2" class="com.jiangcheng.factory.StaticFactory" factory-method="getCar">
         <constructor-arg value="1"></constructor-arg>
     </bean>
+
+    <!-- 配置实例工厂对象 -->
+    <bean id="carFactory" class="com.jiangcheng.factory.InstanceCarFactory"></bean>
+
+    <!-- 通过实例工厂对象创建car对象 -->
+    <bean id="car3" factory-bean="carFactory" factory-method="getCar">
+        <constructor-arg value="2"></constructor-arg>
+    </bean>
+
 </beans>
