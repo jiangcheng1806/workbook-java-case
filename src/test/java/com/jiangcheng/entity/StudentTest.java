@@ -26,7 +26,21 @@ public class StudentTest {
         //Student stu = (Student) applicationContext.getBean("stu");///Student(id=1, name=<张三>, age=23)
         //Student stu = (Student) applicationContext.getBean("stu3");///Student(id=1, name=<张三>, age=23)
         //Student stu = (Student) applicationContext.getBean("stu4");///Student(id=1, name=<张三>, age=23)
-        Classes classes = (Classes) applicationContext.getBean("classes");
-        System.out.println(classes);
+        //Classes classes = (Classes) applicationContext.getBean("classes");
+        //System.out.println(classes);
+
+
+
+
+        User user = (User) applicationContext.getBean("user");
+        //User user1 = (User) applicationContext.getBean("user");
+        //User user2 = (User) applicationContext.getBean("user2");
+        //user的scope为prototype时是false,默认是true
+        //System.out.println(user == user1);
+        //System.out.println(user2);
+        Car car = (Car) applicationContext.getBean("car");
+        System.out.println(car);
+
+
     }
 }
