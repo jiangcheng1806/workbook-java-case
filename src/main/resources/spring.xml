@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置student对象-->
+
+    <!--<bean id="stu" class="com.jiangcheng.entity.Student"></bean>--><!--v1 打印之后没有初始化值-->
+    <bean id="stu" class="com.jiangcheng.entity.Student">
+        <property name="id" value="1"></property>
+        <property name="name">
+            <value><![CDATA[<张三>]]></value>
+        </property>
+        <property name="age" value="23"></property>
+        <!-- 将classes对象赋给stu对象 -->
+        <property name="classes" ref="classes"></property>
+    </bean>
+
+    <bean id="stu2" class="com.jiangcheng.entity.Student">
+        <property name="id" value="1"></property>
+        <property name="name" value="李四"></property>
+        <property name="age" value="23"></property>
+    </bean>
+
+    <!-- 通过有参构造函数创建对象 -->
+    <bean id="stu3" class="com.jiangcheng.entity.Student">
+        <constructor-arg name="id" value="3"></constructor-arg>
+        <constructor-arg name="name" value="小明"></constructor-arg>
+        <constructor-arg name="age" value="22"></constructor-arg>
+    </bean>
+
+    <bean id="stu4" class="com.jiangcheng.entity.Student">
+        <constructor-arg index="0" value="4"></constructor-arg>
+        <constructor-arg index="1" value="小明"></constructor-arg>
+        <constructor-arg index="2" value="22"></constructor-arg>
+    </bean>
+
+    <!--创建classes对象-->
+    <bean id="classes" class="com.jiangcheng.entity.Classes">
+        <property name="id" value="1"></property>
+        <property name="name" value="Java"></property>
+        <property name="students">
+            <!-- 注入student对象 -->
+            <list>
+                <ref bean="stu2"/>
+                <ref bean="stu3"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
