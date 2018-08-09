@@ -1,5 +1,7 @@
 package com.jiangcheng.theory.aop;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 类名称：CalImpl<br>
  * 类描述：<br>
@@ -8,7 +10,7 @@ package com.jiangcheng.theory.aop;
  * @author jiangcheng
  * @version 1.0.0
  */
-
+@Component("calLogger")
 public class CalImpl implements Cal {
     @Override
     public int add(int num1, int num2) {
