@@ -136,8 +136,12 @@
             <version>${aspectj.version}</version>
         </dependency>
 
-
-
+        <!--guava cache-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
 
         <!--C3P0-->
         <dependency>
