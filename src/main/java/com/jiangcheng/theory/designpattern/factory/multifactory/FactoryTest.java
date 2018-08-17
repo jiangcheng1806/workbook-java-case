@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.multifactory;
+package com.jiangcheng.theory.designpattern.factory.multifactory;
 
 import com.jiangcheng.theory.designpattern.commonfactory.Sender;
 

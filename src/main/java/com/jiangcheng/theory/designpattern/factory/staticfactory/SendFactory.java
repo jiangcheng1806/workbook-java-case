@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.staticfactory;
+package com.jiangcheng.theory.designpattern.factory.staticfactory;
 
 import com.jiangcheng.theory.designpattern.commonfactory.MailSender;
 import com.jiangcheng.theory.designpattern.commonfactory.Sender;

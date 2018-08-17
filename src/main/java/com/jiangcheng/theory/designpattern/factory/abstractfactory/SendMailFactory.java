@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.abstractfactory;
+package com.jiangcheng.theory.designpattern.factory.abstractfactory;
 
 public class SendMailFactory implements Provider {
 
