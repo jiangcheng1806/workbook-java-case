@@ -311,4 +311,97 @@ public class Solution {
         }
         return result[target];
     }
+
+
+    /**
+     *
+     * 旋转数组中的最小数
+     *
+     * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
+     *
+     * tip :从前往后遍历,找到后一个数字小于前一个数字.这个数字就是最小的那个数字.通过后发现这道题的时间复杂度是O(n),后来看了一下别人的思路发现这道题最好的解法是用二分搜索的思想.
+     *      因为前一个序列肯定大于后一个序列的,所以如果中间点是大于前前序列的,说明最小数在后面序列,然后在在后面的序列进行二分搜索,直到两个指针相邻,这个时候找到最后的那个最小数
+     *
+     */
+    public int minNumberInRotateArray(int [] array){
+        if (array.length == 0){
+            return 0;
+        }
+        int low = 0;
+        int high = array.length - 1;
+        int mid = 0;
+        if (array[low] < array[high]){
+            return array[low];
+        }
+        while (array[low] >= array[high]){
+            if (high - low == 1){
+                mid = high;
+                break;
+            }
+            mid = low + (high - low)/2;
+            if (array[low] <= array[mid]){
+                low = mid;
+            } else if (array[mid] <= array[high]){
+                high = mid;
+            }
+        }
+        return array[mid];
+    }
+
+
+    /**
+     *
+     * 两个栈实现队列
+     *
+     * 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+     *
+     * tip :栈和队列的弹出序列是相反的这个两个数据结构的性质有关,一个是先进先出,一个是先进后出.所以如果用两个栈,相当于把数据的顺序倒了两次最后使得起顺序和队列一样,这是原理很简单,但是如何实现呢,这里需要注意的点有两个:
+     *      1. 弹出栈不为空不能向里面压入数据
+     *      2. 压入栈必须每次将所有的数据都压入弹出栈
+     *
+     */
+    Stack<Integer> stack1 = new Stack<>();
+    Stack<Integer> stack2 = new Stack<>();
+    public void push(int node){
+        stack1.push(node);
+    }
+    public int pop(){
+        if (stack2.isEmpty()){
+            while (!stack1.isEmpty()){
+                stack2.push(stack1.pop());
+            }
+        }
+        return stack2.pop();
+    }
+
+    /**
+     *
+     * 重建二叉树
+     *
+     * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
+     *
+     * tip :已知树的先序遍历和中序遍历,需要我们重建这个二叉树,其实大家都知道三种顺序遍历,我们只用只要其中两个就可以重建这个二叉树了.拿到这道题先分析一下,不用代码实现,我们自己如果要重建这个二叉树在纸上我们会怎么做.
+     *      1. 找根节点
+     *      2. 找出左右子树
+     *      3. 在左右子树中继续找子树的根节点,直到节点为空,则二叉树重建完成
+     *      首先怎么找根节点,这很简单,先序遍历的第一个节点就是根节点,如果是后续遍历就倒过来,最后一个是根节点.怎么找左右子树呢?在中序遍历中找到根节点的位置,然后根节点左边的序列就是左子树的中序遍历序列.右边同理.接下来就是一个不断的递归完成子问题的过程,在以子树的根节点为根继续向下
+     *
+     */
+    public TreeNode reConstructBinaryTree(int[] pre,int[] in){
+        TreeNode root = reConstructBinaryTree(pre,0,pre.length-1,in,0,in.length-1);
+        return root;
+    }
+    private TreeNode reConstructBinaryTree(int[] pre,int preStart,int preEnd,int[] in,int inStart,int inEnd){
+        if (preStart > preEnd || inStart > inEnd){
+            return null;
+        }
+        TreeNode root = new TreeNode(pre[preStart]);
+        for (int i = inStart;i < inEnd; i++){
+            if (in[i] == pre[preStart]){
+                root.left = reConstructBinaryTree(pre,preStart+1,preStart+i-inStart,in,inStart,i-1);
+                root.right = reConstructBinaryTree(pre,i-inStart+preStart+1,preEnd,in,i+1,inEnd);
+            }
+        }
+        return root;
+    }
 }
