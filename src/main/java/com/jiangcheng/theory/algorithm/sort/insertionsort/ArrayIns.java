@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.algorithm.insertionsort;
+package com.jiangcheng.theory.algorithm.sort.insertionsort;
 
 /**
  * 插入排序外循环从第二个数开始一直到最后一个数也就是从out=1开始到nElems-1结束(out<nElems)

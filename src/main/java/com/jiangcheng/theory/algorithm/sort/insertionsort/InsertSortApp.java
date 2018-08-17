@@ -1,13 +1,13 @@
-package com.jiangcheng.theory.algorithm.selectionsort;
+package com.jiangcheng.theory.algorithm.sort.insertionsort;
 
 
-
-public class SelectSortApp {
+public class InsertSortApp 
+{
 
 	public static void main(String[] args) {
 		int maxSize = 100;
-		ArraySel arr;
-		arr = new ArraySel(maxSize);
+		ArrayIns arr;
+		arr = new ArrayIns(maxSize);
 		arr.insert(77);
 		arr.insert(99);
 		arr.insert(44);
@@ -21,7 +21,7 @@ public class SelectSortApp {
 		
 		arr.display();
 		
-		arr.selectionSort();
+		arr.insertionSort();
 		arr.display();
 		
 	}

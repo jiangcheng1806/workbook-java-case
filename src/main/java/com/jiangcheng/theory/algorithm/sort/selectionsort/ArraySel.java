@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.algorithm.selectionsort;
+package com.jiangcheng.theory.algorithm.sort.selectionsort;
 
 /**
  * 选择排序感觉还是不太够理解,不过基本上应该是这样的

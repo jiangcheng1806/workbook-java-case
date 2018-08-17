@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.algorithm.analysis;
+package com.jiangcheng.theory.algorithm.stringanalysis;
 
 /**
  * 

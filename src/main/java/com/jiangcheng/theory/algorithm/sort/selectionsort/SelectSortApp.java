@@ -1,10 +1,13 @@
-package com.jiangcheng.theory.algorithm.bubblesort;
+package com.jiangcheng.theory.algorithm.sort.selectionsort;
 
-public class BubbleSortApp {
+
+
+public class SelectSortApp {
+
 	public static void main(String[] args) {
 		int maxSize = 100;
-		ArrayBub arr;
-		arr = new ArrayBub(maxSize);
+		ArraySel arr;
+		arr = new ArraySel(maxSize);
 		arr.insert(77);
 		arr.insert(99);
 		arr.insert(44);
@@ -18,7 +21,7 @@ public class BubbleSortApp {
 		
 		arr.display();
 		
-		arr.bubbleSort();
+		arr.selectionSort();
 		arr.display();
 		
 	}

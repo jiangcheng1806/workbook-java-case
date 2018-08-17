@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.algorithm.bubblesort;
+package com.jiangcheng.theory.algorithm.sort.bubblesort;
 
 /**
  * 

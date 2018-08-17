@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.algorithm;
+package com.jiangcheng.theory.algorithm.digits;
 
 
 import java.math.BigDecimal;

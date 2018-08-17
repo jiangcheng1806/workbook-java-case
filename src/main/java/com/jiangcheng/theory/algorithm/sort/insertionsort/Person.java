@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.algorithm.insertionsort;
+package com.jiangcheng.theory.algorithm.sort.insertionsort;
 
 public class Person {
 

@@ -1,13 +1,9 @@
-package com.jiangcheng.theory.algorithm.insertionsort;
+package com.jiangcheng.theory.algorithm.sort.bubblesort;
 
-
-public class InsertSortApp 
-{
-
+public class BubbleSortApp {
 	public static void main(String[] args) {
 		int maxSize = 100;
-		ArrayIns arr;
-		arr = new ArrayIns(maxSize);
+		ArrayBub arr = new ArrayBub(maxSize);
 		arr.insert(77);
 		arr.insert(99);
 		arr.insert(44);
@@ -21,7 +17,7 @@ public class InsertSortApp
 		
 		arr.display();
 		
-		arr.insertionSort();
+		arr.bubbleSort();
 		arr.display();
 		
 	}
