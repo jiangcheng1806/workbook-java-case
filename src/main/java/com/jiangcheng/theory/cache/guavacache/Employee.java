@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.gcache;
+package com.jiangcheng.theory.cache.guavacache;
 
 import com.google.common.base.MoreObjects;
 import lombok.AllArgsConstructor;

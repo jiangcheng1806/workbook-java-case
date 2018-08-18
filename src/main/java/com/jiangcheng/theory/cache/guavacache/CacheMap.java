@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.gcache;
+package com.jiangcheng.theory.cache.guavacache;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;

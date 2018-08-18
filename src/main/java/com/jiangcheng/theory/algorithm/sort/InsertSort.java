@@ -1,4 +1,4 @@
-package com.jiangcheng.theory;
+package com.jiangcheng.theory.algorithm.sort;
 
 import java.util.Arrays;
 

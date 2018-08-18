@@ -1,4 +1,4 @@
-package com.jiangcheng.theory;
+package com.jiangcheng.theory.bitwise;
 
 /**
  * 类名称：AssignmentOperator<br>
