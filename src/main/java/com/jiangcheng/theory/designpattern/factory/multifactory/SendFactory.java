@@ -1,8 +1,8 @@
 package com.jiangcheng.theory.designpattern.factory.multifactory;
 
-import com.jiangcheng.theory.designpattern.commonfactory.MailSender;
-import com.jiangcheng.theory.designpattern.commonfactory.Sender;
-import com.jiangcheng.theory.designpattern.commonfactory.SmsSender;
+import com.jiangcheng.theory.designpattern.factory.commonfactory.MailSender;
+import com.jiangcheng.theory.designpattern.factory.commonfactory.Sender;
+import com.jiangcheng.theory.designpattern.factory.commonfactory.SmsSender;
 
 /**
  * 

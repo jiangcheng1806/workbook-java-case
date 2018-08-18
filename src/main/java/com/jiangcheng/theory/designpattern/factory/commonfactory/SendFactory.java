@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.commonfactory;
+package com.jiangcheng.theory.designpattern.factory.commonfactory;
 
 public class SendFactory {
 
