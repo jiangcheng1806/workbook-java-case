@@ -1,9 +1,7 @@
-package com.jiangcheng.theory.algorithm.powermodular;
-
-import java.util.Arrays;
+package com.jiangcheng.theory.algorithm.powermod;
 
 /**
- * 类名称：PowerModular<br>
+ * 类名称：PowerMod<br>
  * 类描述：<br>
  * 创建时间：2018年08月18日<br>
  *
@@ -11,7 +9,7 @@ import java.util.Arrays;
  * @version 1.0.0
  */
 
-public class PowerModular {
+public class PowerMod {
 
     /**
      *
