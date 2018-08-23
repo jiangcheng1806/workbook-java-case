@@ -1,11 +1,9 @@
-package com.jiangcheng.theory.algorithm.sort.insertionsort.promote;
+package com.jiangcheng.theory.algorithm.sort.insertionsort;
 
 import java.util.Arrays;
 
-import static com.jiangcheng.theory.algorithm.sort.insertionsort.promote.Insertion.binarySearch;
-
 /**
- * 类名称：Insertion<br>
+ * 类名称：InsertionPromot<br>
  * 类描述：插入排序<br>
  * 创建时间：2018年08月20日<br>
  *
@@ -13,7 +11,7 @@ import static com.jiangcheng.theory.algorithm.sort.insertionsort.promote.Inserti
  * @version 1.0.0
  */
 
-public class Insertion {
+public class InsertionPromot {
 
     /**
      * 在要排序的一组数中，假设前面(n-1)[n>=2] 个数已经是排好顺序的，现在要把第n个数找到相应位置并插入，使得这n个数也是排好顺序的。如此反复循环，直到全部排好顺序。
