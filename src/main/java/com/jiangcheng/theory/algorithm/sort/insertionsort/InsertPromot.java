@@ -3,15 +3,15 @@ package com.jiangcheng.theory.algorithm.sort.insertionsort;
 import java.util.Arrays;
 
 /**
- * 类名称：InsertionPromot<br>
- * 类描述：插入排序<br>
+ * 类名称：InsertPromot<br>
+ * 类描述：插入排序  https://blog.csdn.net/u012152619/article/details/47306209<br>
  * 创建时间：2018年08月20日<br>
  *
  * @author jiangcheng
  * @version 1.0.0
  */
 
-public class InsertionPromot {
+public class InsertPromot {
 
     /**
      * 在要排序的一组数中，假设前面(n-1)[n>=2] 个数已经是排好顺序的，现在要把第n个数找到相应位置并插入，使得这n个数也是排好顺序的。如此反复循环，直到全部排好顺序。
