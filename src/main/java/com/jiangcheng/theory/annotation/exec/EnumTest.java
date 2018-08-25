@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.annotation;
+package com.jiangcheng.theory.annotation.exec;
 
 public class EnumTest {
 
