@@ -14,6 +14,17 @@ import java.util.concurrent.FutureTask;
  */
 
 public class FuntureCook {
+
+    /**
+     *
+     * FutureTask 实现了 Runnable 和 Callable接口 将callable 作为内部属性 通过 runnable 为 callable 赋值 再通过 callable 就实现了返回了
+     *
+     *
+     */
+
+
+
+
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         long startTime = System.currentTimeMillis();
         // 第一步 网购厨具
