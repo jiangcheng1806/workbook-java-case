@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.proxy;
+package com.jiangcheng.theory.designpattern.proxy.staticproxy;
 
 public interface Sourceable {
 

@@ -31,4 +31,9 @@ public class UserDAOImpl implements UserDAO {
     public User getUserById(int id) {
         return users.get(id);
     }
+
+    @Override
+    public void save() {
+        System.out.println("保存数据");
+    }
 }

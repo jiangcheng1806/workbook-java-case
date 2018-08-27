@@ -12,4 +12,6 @@ import com.jiangcheng.bean.User;
  */
 public interface UserDAO {
     User getUserById(int id);
+
+    public void save();
 }
