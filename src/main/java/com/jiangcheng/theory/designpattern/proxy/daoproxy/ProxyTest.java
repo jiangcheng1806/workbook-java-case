@@ -5,7 +5,7 @@ import com.jiangcheng.dao.impl.UserDAOImpl;
 import org.junit.Test;
 
 /**
- * 类名称：StaticProxyTest<br>
+ * 类名称：ProxyTest<br>
  * 类描述：<br>
  * 创建时间：2018年08月27日<br>
  *
@@ -13,7 +13,7 @@ import org.junit.Test;
  * @version 1.0.0
  */
 
-public class StaticProxyTest {
+public class ProxyTest {
     @Test
     public void testStaticProxy(){
         //目标对象
@@ -21,5 +21,14 @@ public class StaticProxyTest {
         //代理对象
         UserDaoProxy proxy = new UserDaoProxy(target);
         proxy.save();
+    }
+
+    @Test
+    public void testDynamicProxy(){
+        UserDAO target = new UserDAOImpl();
+        System.out.println(target.getClass());  //输出目标对象信息
+        UserDAO proxy = (UserDAO) new ProxyFactory(target).getProxyInstance();
+        System.out.println(proxy.getClass()); //输出代理对象信息
+        proxy.save(); //执行代理方法
     }
 }
