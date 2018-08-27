@@ -4,7 +4,7 @@ import com.jiangcheng.bean.User;
 import com.jiangcheng.dao.UserDAO;
 
 /**
- * 类名称：UserDaoProxy<br>
+ * 类名称：StaticProxyFactory<br>
  * 类描述：<br>
  * 创建时间：2018年08月27日<br>
  *
@@ -12,11 +12,11 @@ import com.jiangcheng.dao.UserDAO;
  * @version 1.0.0
  */
 
-public class UserDaoProxy implements UserDAO {
+public class StaticProxyFactory implements UserDAO {
 
     private UserDAO target;
 
-    public UserDaoProxy(UserDAO target){
+    public StaticProxyFactory(UserDAO target){
         this.target = target;
     }
 
