@@ -31,4 +31,16 @@ public class ProxyTest {
         System.out.println(proxy.getClass()); //输出代理对象信息
         proxy.save(); //执行代理方法
     }
+
+    @Test
+    public void testCglibProxy(){
+        //目标对象
+        UserDAO target = new UserDAOImpl();
+        System.out.println(target.getClass());
+        //代理对象
+        UserDAO proxy = (UserDAO) new CglibProxyFactory(target).getProxyInstance();
+        System.out.println(proxy.getClass());
+        //执行代理对象方法
+        proxy.save();
+    }
 }
