@@ -1,6 +1,9 @@
 package com.jiangcheng.theory.designpattern.interpreter;
 
 /**
+ *
+ * 解释器模式 很少使用
+ *
  * 基本就这样，解释器模式用来做各种各样的解释器，如正则表达式等的解释器等等！
  * @author jiangcheng-wb
  *
