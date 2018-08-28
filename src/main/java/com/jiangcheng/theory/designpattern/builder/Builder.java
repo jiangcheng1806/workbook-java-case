@@ -1,8 +1,8 @@
 package com.jiangcheng.theory.designpattern.builder;
 
-import com.jiangcheng.theory.designpattern.factory.commonfactory.MailSender;
-import com.jiangcheng.theory.designpattern.factory.commonfactory.Sender;
-import com.jiangcheng.theory.designpattern.factory.commonfactory.SmsSender;
+import com.jiangcheng.theory.designpattern.factory.commonfactory_level1.MailSender;
+import com.jiangcheng.theory.designpattern.factory.commonfactory_level1.Sender;
+import com.jiangcheng.theory.designpattern.factory.commonfactory_level1.SmsSender;
 
 import java.util.ArrayList;
 import java.util.List;
