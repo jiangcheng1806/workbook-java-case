@@ -3,7 +3,8 @@ package com.jiangcheng.theory.designpattern.mediator;
 
 
 /**
- * 
+ *
+ * 中介者模式
  * 
  * User类统一接口，User1和User2分别是不同的对象，二者之间有关联，如果不采用中介者模式，则需要二者相互持有引用，这样二者的耦合度很高，
  * 为了解耦，引入了Mediator类，提供统一接口，MyMediator为其实现类，里面持有User1和User2的实例，用来实现对User1和User2的控制。
