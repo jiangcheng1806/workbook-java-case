@@ -3,6 +3,12 @@ package com.jiangcheng.theory.designpattern.flyweight;
 import java.util.HashMap;
 
 /**
+ *
+ *
+ *
+ * 享元模式
+ *
+ *
  * 类名称：FlyWeightFactory<br>
  * 类描述：<br>
  * 创建时间：2018年08月28日<br>

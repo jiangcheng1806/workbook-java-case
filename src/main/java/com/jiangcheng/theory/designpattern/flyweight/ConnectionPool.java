@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 /**
+ *
+ * 享元模式
+ *
  * 通过连接池的管理，实现了数据库连接的共享，不需要每一次都重新创建连接，节省了数据库重新创建的开销，提升了系统的性能！
  * @author jiangcheng-wb
  *
