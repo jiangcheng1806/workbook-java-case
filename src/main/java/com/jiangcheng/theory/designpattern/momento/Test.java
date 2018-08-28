@@ -1,6 +1,9 @@
 package com.jiangcheng.theory.designpattern.momento;
 
 /**
+ *
+ * 备忘录模式
+ *
  * 新建原始类时，value被初始化为egg，后经过修改，将value的值置为niu，
  * 最后倒数第二行进行恢复状态，结果成功恢复了。其实我觉得这个模式叫“备份-恢复”模式最形象。
  * @author jiangcheng-wb
