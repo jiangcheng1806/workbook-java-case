@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.chainofresponsibility;
+package com.jiangcheng.theory.designpattern.handlerchain;
 
 /**
  * Abstracthandler类提供了get和set方法，

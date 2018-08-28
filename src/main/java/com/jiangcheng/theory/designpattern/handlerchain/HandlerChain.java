@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.designpattern.chainofresponsibility;
+package com.jiangcheng.theory.designpattern.handlerchain;
 
 /**
  * 类名称：HandlerChain<br>
