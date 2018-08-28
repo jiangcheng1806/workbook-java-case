@@ -1,5 +1,12 @@
 package com.jiangcheng.theory.designpattern.composite;
 
+/**
+ *
+ * 组合模式
+ *
+ * 只要是树形结构，就考虑使用组合模式。
+ *
+ */
 public class Tree {
 
 	TreeNode root = null;
