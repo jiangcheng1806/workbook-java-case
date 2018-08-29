@@ -18,7 +18,16 @@ public class TestThread {
 
         Thread.currentThread().setName("主线程");
         for (int i = 0; i < 100; i++) {
-            System.out.println(Thread.currentThread().getName()+":"+Thread.currentThread().getPriority()+i);
+            System.out.println(Thread.currentThread().getName()+":"+Thread.currentThread().getPriority()+"-------"+i);
+        }
+    }
+}
+
+class SubThread extends Thread {
+    @Override
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println(Thread.currentThread().getName()+":"+Thread.currentThread().getPriority()+"-------"+i);
         }
     }
 }

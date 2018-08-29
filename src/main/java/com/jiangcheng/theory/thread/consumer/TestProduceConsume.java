@@ -2,7 +2,7 @@ package com.jiangcheng.theory.thread.consumer;
 
 /**
  * 类名称：TestProduceConsume<br>
- * 类描述：<br>
+ * 类描述：生产消费者模式 见设计模式模块中的生产消费者模式3中模式<br>
  * 创建时间：2018年08月18日<br>
  *
  * @author jiangcheng
