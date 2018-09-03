@@ -33,4 +33,5 @@
          </plugin>
 		 <plugin interceptor="com.jiangcheng.interceptor.SqlLogInterceptor"></plugin>
      </plugins>
+
 </configuration>
