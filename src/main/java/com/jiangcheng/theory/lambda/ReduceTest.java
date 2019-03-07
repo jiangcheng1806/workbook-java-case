@@ -86,48 +86,4 @@ public class ReduceTest {
         System.out.println("-----------------------------");
     }
 
-    public static void main4(String[] args) {
-
-        ArrayList<Integer> accResult = Stream.of(1,2,3,4).reduce(new ArrayList<Integer>(),
-                new BiFunction<ArrayList<Integer>, Integer, ArrayList<Integer>>() {
-                    @Override
-                    public ArrayList<Integer> apply(ArrayList<Integer> acc, Integer item) {
-
-                        acc.add(item);
-                        System.out.println("item: " + item);
-                        System.out.println("acc: " + acc);
-                        System.out.println("BiFunction");
-
-                        return acc;
-                    }
-                }, new BinaryOperator<ArrayList<Integer>>() {
-                    @Override
-                    public ArrayList<Integer> apply(ArrayList<Integer> acc, ArrayList<Integer> item) {
-
-                        System.out.println("BinaryOperator");
-
-                        acc.addAll(item);
-                        System.out.println("item: " + item);
-                        System.out.println("acc: " + acc);
-                        System.out.println("--------------------");
-
-                        return acc;
-                    }
-                });
-
-        System.out.println("accResult: " + accResult);
-        System.out.println("-----------------------------");
-    }
-
-    public class User {
-        private long id;
-        private BigDecimal money;
-
-        public User(long id, BigDecimal money) {
-            this.id = id;
-            this.money = money;
-        }
-        // getter&setter
-    }
-
 }
