@@ -3,6 +3,8 @@ package com.jiangcheng.test;
 import com.jiangcheng.theory.junit.HelloWorld;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -19,5 +21,26 @@ public class HelloWorldTest {
     public void sayHello() {
         HelloWorld helloWorld = new HelloWorld();
         assertEquals(helloWorld.sayHello(),"Hello World!");
+    }
+
+
+    @Test
+    public void testContains() {
+        String vehicle = "赣K83207";
+
+        String vehicle1 = "赣K83207赣K80735挂";
+
+        boolean f = vehicle1.contains(vehicle);
+
+        System.out.println("res : "+f);
+
+
+
+        String vehicle2 = "";
+        String[] vehicle_arr = vehicle2.split(",");
+        System.out.println(Arrays.toString(vehicle_arr));
+
+
+
     }
 }
