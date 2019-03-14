@@ -277,6 +277,10 @@ public class LambdaTest {
 
         System.out.println(stuMap1);
 
+        Map<String,Student> stuMap2 = students.stream().collect(Collectors.toMap(Student::getUsername,student -> student,(student, student2) -> student));
+
+        System.out.println(stuMap2);
+
         // 将Stream转换成容器或Map
         Stream<String> stream = Stream.of("I", "love", "you", "too");
         Map<String, Integer> strMap = stream.collect(Collectors.toMap(Function.identity(), String::length));
@@ -288,10 +292,9 @@ public class LambdaTest {
         System.out.println(feMap);
 
 
+        // <- This,
         Map<String,String> absMap = Arrays.asList("a", "b", "c")
-                .stream()
-                .map(Function.identity()) // <- This,
-                .map(str -> str)          // <- is the same as this.
+                .stream()          // <- is the same as this.
                 .collect(Collectors.toMap(
                         Function.identity(), // <-- And this,
                         str -> str));        // <-- is the same as this.
