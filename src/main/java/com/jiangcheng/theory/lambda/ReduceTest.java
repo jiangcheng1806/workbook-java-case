@@ -2,6 +2,7 @@ package com.jiangcheng.theory.lambda;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.IntSummaryStatistics;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
@@ -120,10 +121,10 @@ public class ReduceTest {
 
 
     /**
-     *
+     * range
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main6(String[] args) {
 
         double average = IntStream.range(1,10).summaryStatistics().getAverage();
         System.out.println(average);
@@ -134,6 +135,29 @@ public class ReduceTest {
         long count = IntStream.range(1,10).summaryStatistics().getCount();
         System.out.println(count);
 
+    }
+
+
+    /**
+     * statistics
+     * @param args
+     */
+    public static void main(String[] args) {
+        Stream<Integer> trans = Stream.of(11, 9, 2, 13, 1, 2, 99, 54, 23, 66, 70, 23, 46, 50, 100, 10, 24, 18, 19, 2);
+
+        IntSummaryStatistics all = trans
+// 前5条跳过，2, 99, 54, 23, 66, 70, 23, 46, 50, 100, 10, 24, 18, 19, 2
+                .skip(5)
+// 取10条考核交易 2, 99, 54, 23, 66, 70, 23, 46, 50, 100
+                .limit(10)
+// 将50以下的交易剔除 99, 54, 66, 70, 50, 100
+                .filter(i -> i >= 50)
+// 转换成数字。如果是IntStream 则不需要转换
+                .mapToInt(i->i)
+// 将流的统计结果放入包装对象中
+                .summaryStatistics();
+// 交易总量 439w，平均值为439/6
+        System.out.println(all.getAverage());
     }
 
 }
