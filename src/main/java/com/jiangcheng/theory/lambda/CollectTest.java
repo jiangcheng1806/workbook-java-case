@@ -26,7 +26,7 @@ public class CollectTest {
         System.out.println("hello world");
 
         CollectTest collectTest = new CollectTest();
-        collectTest.testSum();
+        collectTest.testGroupBy();
 
 
     }
@@ -159,6 +159,34 @@ public class CollectTest {
         BigDecimal sumB = Stream.of(new BigDecimal(1),new BigDecimal(2),new BigDecimal(4)).reduce(BigDecimal.ZERO,BigDecimal::add);
 
         System.out.println(sumB);
+
+
+
+    }
+
+    /**
+     * 分组
+     */
+    public void testGroupBy(){
+
+        List<A> aList = new ArrayList<>();
+        aList.add(new A(0,"jiangcheng"));
+        aList.add(new A(1,"chenmei"));
+        aList.add(new A(2,"liqian"));
+        aList.add(new A(2,"liqian2"));
+
+
+        System.out.println(aList);
+
+        //参数 是 Funtion key是泛型
+        Map<Integer, List<A>> groupByA = aList.stream().collect(Collectors.groupingBy(A::getId));
+
+        System.out.println(groupByA);
+
+        //参数是Predicate 接口 所以返回key一定是boolean类型
+        Map<Boolean,List<A>> partitionA = aList.stream().collect(Collectors.partitioningBy(o -> o.getId() % 2 == 1));
+
+        System.out.println(partitionA);
 
 
 
