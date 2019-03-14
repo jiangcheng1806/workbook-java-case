@@ -19,6 +19,10 @@ import java.util.stream.Stream;
 public class ReduceTest {
 
 
+    /**
+     * (acc,item) -> acc+=item
+     * @param args
+     */
     public static void main1(String[] args) {
 
         Optional accResult = Stream.of(1,2,3,4).reduce((acc,item) -> {
@@ -36,6 +40,10 @@ public class ReduceTest {
         System.out.println("-----------------------------");
     }
 
+    /**
+     * (acc,item) -> acc+=item
+     * @param args
+     */
     public static void main2(String[] args) {
 
         int accResult = Stream.of(1,2,3,4).reduce(0,(acc,item) -> {
@@ -53,34 +61,56 @@ public class ReduceTest {
         System.out.println("-----------------------------");
     }
 
-    public static void main3(String[] args) {
+    /**
+     * bifunction operator
+     * @param args
+     */
+    public static void main(String[] args) {
 
         ArrayList<Integer> accResult = Stream.of(1,2,3,4).reduce(new ArrayList<Integer>(),
-                new BiFunction<ArrayList<Integer>, Integer, ArrayList<Integer>>() {
-            @Override
-            public ArrayList<Integer> apply(ArrayList<Integer> acc, Integer item) {
+                (acc, item) -> {
 
-                acc.add(item);
-                System.out.println("item: " + item);
-                System.out.println("acc: " + acc);
-                System.out.println("BiFunction");
+                    acc.add(item);
+                    System.out.println("item: " + item);
+                    System.out.println("acc: " + acc);
+                    System.out.println("BiFunction");
 
-                return acc;
-            }
-        }, new BinaryOperator<ArrayList<Integer>>() {
-            @Override
-            public ArrayList<Integer> apply(ArrayList<Integer> acc, ArrayList<Integer> item) {
+                    return acc;
+                }, (acc, item) -> {
 
-                System.out.println("BinaryOperator");
+                    System.out.println("BinaryOperator");
 
-                acc.addAll(item);
-                System.out.println("item: " + item);
-                System.out.println("acc: " + acc);
-                System.out.println("--------------------");
+                    acc.addAll(item);
+                    System.out.println("item: " + item);
+                    System.out.println("acc: " + acc);
+                    System.out.println("--------------------");
 
-                return acc;
-            }
-        });
+                    return acc;
+                });
+
+        System.out.println("accResult: " + accResult);
+        System.out.println("-----------------------------");
+    }
+
+    /**
+     * Integer::sum
+     * @param args
+     */
+    public static void main4(String[] args) {
+
+        int accResult = Stream.of(1,2,3,4).reduce(0,Integer::sum);
+
+        System.out.println("accResult: " + accResult);
+        System.out.println("-----------------------------");
+    }
+
+    /**
+     * BigDecimal::add
+     * @param args
+     */
+    public static void main5(String[] args) {
+
+        BigDecimal accResult = Stream.of(new BigDecimal(0),new BigDecimal(2),new BigDecimal(3),new BigDecimal(4)).reduce(new BigDecimal(0),BigDecimal::add);
 
         System.out.println("accResult: " + accResult);
         System.out.println("-----------------------------");
