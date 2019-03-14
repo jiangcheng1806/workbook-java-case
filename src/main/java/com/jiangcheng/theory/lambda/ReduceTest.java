@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -65,7 +66,7 @@ public class ReduceTest {
      * bifunction operator
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
 
         ArrayList<Integer> accResult = Stream.of(1,2,3,4).reduce(new ArrayList<Integer>(),
                 (acc, item) -> {
@@ -102,6 +103,7 @@ public class ReduceTest {
 
         System.out.println("accResult: " + accResult);
         System.out.println("-----------------------------");
+
     }
 
     /**
@@ -114,6 +116,24 @@ public class ReduceTest {
 
         System.out.println("accResult: " + accResult);
         System.out.println("-----------------------------");
+    }
+
+
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        double average = IntStream.range(1,10).summaryStatistics().getAverage();
+        System.out.println(average);
+
+        long sum = IntStream.range(1,10).summaryStatistics().getSum();
+        System.out.println(sum);
+
+        long count = IntStream.range(1,10).summaryStatistics().getCount();
+        System.out.println(count);
+
     }
 
 }
