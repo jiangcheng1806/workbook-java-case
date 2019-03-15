@@ -1,9 +1,7 @@
 package com.jiangcheng.theory.lambda;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.IntSummaryStatistics;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.stream.IntStream;
@@ -142,7 +140,7 @@ public class ReduceTest {
      * statistics
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main7(String[] args) {
         Stream<Integer> trans = Stream.of(11, 9, 2, 13, 1, 2, 99, 54, 23, 66, 70, 23, 46, 50, 100, 10, 24, 18, 19, 2);
 
         IntSummaryStatistics all = trans
@@ -160,4 +158,53 @@ public class ReduceTest {
         System.out.println(all.getAverage());
     }
 
+
+    /**
+     *  常用流式操作
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        int[] nums = {2,3,4,5,6};
+
+        // 将元素的平方打印出来
+        Arrays.stream(nums)
+                .map(i->i*i)
+                .forEach(System.out::println);
+
+        // 将元素中的所有偶数累加求和
+        System.out.println(
+                Arrays.stream(nums)
+                        .map(i -> i % 2 == 0 ? i : 0)
+                        .reduce(0, Integer::sum)
+        );
+
+
+        // flatMap处理嵌套的list
+        List<List<Integer>> ll = Arrays.asList(
+                Arrays.asList(1,2,3),
+                Arrays.asList(11,22,33),
+                Arrays.asList(0xF1,0xF2,0xF3)
+        );
+        ll.stream()
+                .flatMap(list -> list.stream())
+                .map(i -> 2 * i)
+                .forEach(i -> System.out.println(i));
+
+        //流的几种创建方式
+        // 从数组创建
+        int [] source = {1,2,3,4,5,6};
+        IntStream s = Arrays.stream(source);
+        s.forEach(System.out::println);
+
+// 从集合创建
+        List list = Arrays.asList(1,2,3,4,5);
+        Stream s2 = list.stream();
+        s2.forEach(System.out::println);
+// 创建1到10的流
+        IntStream s3 = IntStream.range(1,10);
+//  直接创建
+        Stream s4 = Stream.of("wo", "ai", "?");
+        s4.forEach(System.out::println);
+    }
 }
