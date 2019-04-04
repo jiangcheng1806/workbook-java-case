@@ -1,4 +1,4 @@
-package com.jiangcheng.theory.aop;
+package com.jiangcheng.theory.aop.invocation;
 
 import org.springframework.stereotype.Component;
 

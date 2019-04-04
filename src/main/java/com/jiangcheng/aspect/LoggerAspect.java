@@ -21,7 +21,7 @@ import java.util.Arrays;
 public class LoggerAspect {
 
     ////表示before方法执行的时机
-    @Before("execution(public int com.jiangcheng.theory.aop.CalImpl.*(..))")
+    @Before("execution(public int com.jiangcheng.theory.aop.invocation.CalImpl.*(..))")
     public void before(JoinPoint jointPoint){
         //获取方法名
         String name = jointPoint.getSignature().getName();
@@ -31,7 +31,7 @@ public class LoggerAspect {
         System.out.println(name+"的参数是:"+args);
     }
 
-    @After("execution(public int com.jiangcheng.theory.aop.CalImpl.*(..))")
+    @After("execution(public int com.jiangcheng.theory.aop.invocation.CalImpl.*(..))")
     public void after(JoinPoint joinPoint){
         //获取方法名
         String name = joinPoint.getSignature().getName();
@@ -39,7 +39,7 @@ public class LoggerAspect {
         System.out.println(name+"方法结束");
     }
 
-    @AfterReturning(value = "execution(public int com.jiangcheng.theory.aop.CalImpl.*(..))",returning = "result")
+    @AfterReturning(value = "execution(public int com.jiangcheng.theory.aop.invocation.CalImpl.*(..))",returning = "result")
     public void afterReturn(JoinPoint joinPoint,Object result){
         //获取方法名
         String name = joinPoint.getSignature().getName();
@@ -47,7 +47,7 @@ public class LoggerAspect {
         System.out.println(name+"方法的结果是"+result);
     }
 
-    @AfterThrowing(value = "execution(public int com.jiangcheng.theory.aop.CalImpl.*(..))",throwing = "ex")
+    @AfterThrowing(value = "execution(public int com.jiangcheng.theory.aop.invocation.CalImpl.*(..))",throwing = "ex")
     public void afterThrowing(JoinPoint joinPoint,Exception ex){
         //获取方法名
         String name = joinPoint.getSignature().getName();
