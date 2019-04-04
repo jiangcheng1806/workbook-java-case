@@ -1,7 +1,7 @@
 package com.jiangcheng.theory.thread.pool;
 
 /**
- * 类名称：PlainThread<br>
+ * 类名称：ThreadDemo<br>
  * 类描述：<br>
  * 创建时间：2019年04月04日<br>
  *
@@ -9,7 +9,7 @@ package com.jiangcheng.theory.thread.pool;
  * @version 1.0.0
  */
 
-public class PlainThread {
+public class ThreadDemo {
 
     public static void main(String[] args) {
 
