@@ -10,6 +10,7 @@ package com.jiangcheng.theory.junit;
  */
 
 public class Case {
+
     public String begin(){
         return "Application is begining!";
     }
