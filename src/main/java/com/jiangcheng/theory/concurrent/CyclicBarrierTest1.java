@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * 类名称：CyclicBarrierTest<br>
- * 类描述：<br>
+ * 类描述：当四个线程都到达barrier状态后，会从四个线程中选择一个线程去执行<br>
  * 创建时间：2019年04月19日<br>
  *
  * @author jiangcheng

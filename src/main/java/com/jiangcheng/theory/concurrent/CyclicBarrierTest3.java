@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * 类名称：CyclicBarrierTest<br>
- * 类描述：<br>
+ * 类描述：栅栏的重用<br>
  * 创建时间：2019年04月19日<br>
  *
  * @author jiangcheng

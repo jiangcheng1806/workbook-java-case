@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * 类名称：CountDownLatchTest<br>
- * 类描述：<br>
+ * 类描述：类似计数器的功能 使主线程等待其他线程执行完毕之后再进行<br>
  * 创建时间：2019年04月19日<br>
  *
  * @author jiangcheng

@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * 类名称：CyclicBarrierTest<br>
- * 类描述：<br>
+ * 类描述：每个写入线程执行完写数据操作之后，就在等待其他线程写入操作完毕。当所有线程线程写入操作完毕之后，所有线程就继续进行后续的操作了。<br>
  * 创建时间：2019年04月19日<br>
  *
  * @author jiangcheng

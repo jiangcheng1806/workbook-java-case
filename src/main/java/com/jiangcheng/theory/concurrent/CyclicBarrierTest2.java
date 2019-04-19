@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * 类名称：CyclicBarrierTest<br>
- * 类描述：<br>
+ * 类描述：第四个线程启动延迟 前面三个到达barrier 之后 等待了指定的时间之后 发现第四个线程还没有到达 barrier 就抛出异常继续执行后面的任务<br>
  * 创建时间：2019年04月19日<br>
  *
  * @author jiangcheng
