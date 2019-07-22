@@ -64,6 +64,7 @@ public class CollectTest {
         aList.add(new A(1,"chenmei"));
         aList.add(new A(2,"liqian"));
 
+        /// 测试 提交
 
         System.out.println(aList);
         aList.stream().filter(a -> a.id > 1).collect(Collectors.toList());
