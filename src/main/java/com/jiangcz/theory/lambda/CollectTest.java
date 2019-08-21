@@ -26,9 +26,8 @@ public class CollectTest {
         System.out.println("hello world");
 
         CollectTest collectTest = new CollectTest();
-        collectTest.testGroupBy();
-
-
+        //collectTest.testGroupBy();
+        collectTest.testSum();
     }
 
     @AllArgsConstructor
@@ -148,13 +147,33 @@ public class CollectTest {
         aList.add(new A(1,"chenmei"));
         aList.add(new A(2,"liqian"));
         aList.add(new A(2,"liqian2"));
+        aList.add(new A(null,"liqian3"));
 
 
         System.out.println(aList);
 
-        Integer sumA = aList.stream().map(A::getId).reduce(0,Integer::sum);
+        //Integer sumA = aList.stream().map(A::getId).reduce(0,Integer::sum);
+
+        Integer sumA = aList.stream().map(A::getId).reduce(0,(a,b) -> {if (b != null){
+            a += b;
+            }
+            return a;
+        });
 
         System.out.println(sumA);
+
+        //Optional<Integer> opSumA = aList.stream().map(A::getId).reduce(Integer::sum);//仍然出现空指针
+
+        //System.out.println(opSumA.orElse(0));
+
+        //Optional<Integer> opSumA = aList.stream().map(A::getId).map(Optional::of).map(v -> v.orElse(0)).reduce(Integer::sum);//仍然出现空指针
+
+        //System.out.println(opSumA.orElse(0));
+
+        //List<Optional<Integer>> list =  aList.stream().map(A::getId).map(Optional::of).collect(Collectors.toList()); // 仍然出现空指针
+
+        //System.out.println(list);
+
 
         BigDecimal sumB = Stream.of(new BigDecimal(1),new BigDecimal(2),new BigDecimal(4)).reduce(BigDecimal.ZERO,BigDecimal::add);
 
@@ -176,17 +195,17 @@ public class CollectTest {
         aList.add(new A(2,"liqian2"));
 
 
-        System.out.println(aList);
+        System.out.println(aList);//[CollectTest.A(id=0, name=jiangcheng), CollectTest.A(id=1, name=chenmei), CollectTest.A(id=2, name=liqian), CollectTest.A(id=2, name=liqian2)]
 
         //参数 是 Funtion key是泛型
         Map<Integer, List<A>> groupByA = aList.stream().collect(Collectors.groupingBy(A::getId));
 
-        System.out.println(groupByA);
+        System.out.println(groupByA);//{0=[CollectTest.A(id=0, name=jiangcheng)], 1=[CollectTest.A(id=1, name=chenmei)], 2=[CollectTest.A(id=2, name=liqian), CollectTest.A(id=2, name=liqian2)]}
 
         //参数是Predicate 接口 所以返回key一定是boolean类型
         Map<Boolean,List<A>> partitionA = aList.stream().collect(Collectors.partitioningBy(o -> o.getId() % 2 == 1));
 
-        System.out.println(partitionA);
+        System.out.println(partitionA);//{false=[CollectTest.A(id=0, name=jiangcheng), CollectTest.A(id=2, name=liqian), CollectTest.A(id=2, name=liqian2)], true=[CollectTest.A(id=1, name=chenmei)]}
 
 
 
