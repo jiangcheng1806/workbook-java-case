@@ -6,7 +6,6 @@
     <artifactId>java-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>theories</module>
         <module>application-spring</module>
         <module>application-designpattern</module>
         <module>application-lambda</module>
@@ -15,7 +14,7 @@
         <module>application-algorithm</module>
         <module>application-messages</module>
         <module>application-storages</module>
-        <module>application-bigdata</module>
+        <module>application-junit</module>
         <module>application-network</module>
     </modules>
     <packaging>pom</packaging>

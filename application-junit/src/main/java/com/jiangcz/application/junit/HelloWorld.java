@@ -1,4 +1,4 @@
-package com.jiangcz.theory.junit;
+package com.jiangcz.application.junit;
 
 /**
  * 类名称：HelloWorld<br>

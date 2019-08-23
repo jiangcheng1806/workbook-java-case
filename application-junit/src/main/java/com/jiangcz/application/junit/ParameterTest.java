@@ -1,4 +1,4 @@
-package com.jiangcz.theory.junit;
+package com.jiangcz.application.junit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
