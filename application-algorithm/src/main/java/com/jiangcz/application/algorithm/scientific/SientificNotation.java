@@ -1,4 +1,4 @@
-package com.jiangcz.theory;
+package com.jiangcz.application.algorithm.scientific;
 
 import static java.lang.Float.NaN;
 import static jdk.nashorn.internal.objects.Global.Infinity;

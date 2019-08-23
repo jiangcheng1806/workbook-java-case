@@ -15,6 +15,8 @@
         <module>application-algorithm</module>
         <module>application-messages</module>
         <module>application-storages</module>
+        <module>application-bigdata</module>
+        <module>application-network</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,4 +1,4 @@
-package com.jiangcz.theory.mapreduce;
+package com.jiangcz.application.algorithm.mapreduce;
 
 import org.apache.hadoop.fs.FsUrlStreamHandlerFactory;
 import org.apache.hadoop.io.IOUtils;

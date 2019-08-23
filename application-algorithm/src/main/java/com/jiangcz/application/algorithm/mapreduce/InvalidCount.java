@@ -1,4 +1,4 @@
-package com.jiangcz.theory.mapreduce;
+package com.jiangcz.application.algorithm.mapreduce;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

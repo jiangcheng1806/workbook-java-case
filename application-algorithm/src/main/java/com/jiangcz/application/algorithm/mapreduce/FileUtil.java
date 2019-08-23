@@ -1,4 +1,4 @@
-package com.jiangcz.theory.mapreduce;
+package com.jiangcz.application.algorithm.mapreduce;
 
 import java.io.File;
 
