@@ -1,4 +1,4 @@
-package com.jiangcz;
+package com.jiangcz.application.spring;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

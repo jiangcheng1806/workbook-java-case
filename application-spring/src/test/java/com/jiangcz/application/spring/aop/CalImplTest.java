@@ -1,4 +1,4 @@
-package jiangcz.aop;
+package com.jiangcz.application.spring.aop;
 
 import com.jiangcz.application.spring.aop.invocation.Cal;
 import org.springframework.context.ApplicationContext;
