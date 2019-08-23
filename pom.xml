@@ -7,7 +7,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>theories</module>
-        <module>spring-application</module>
+        <module>application-spring</module>
+        <module>application-designpattern</module>
     </modules>
     <packaging>pom</packaging>
 
