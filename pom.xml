@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jiangcz</groupId>
-    <artifactId>java-practice</artifactId>
+    <artifactId>multi-applications</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>application-spring</module>
@@ -19,7 +19,7 @@
     </modules>
     <packaging>pom</packaging>
 
-    <name>java-practice</name>
+    <name>multi-applications</name>
     <url>http://maven.apache.org</url>
 
     <properties>
