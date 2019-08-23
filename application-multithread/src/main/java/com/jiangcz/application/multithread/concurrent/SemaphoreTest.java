@@ -1,4 +1,4 @@
-package com.jiangcz.theory.concurrent;
+package com.jiangcz.application.multithread.concurrent;
 
 import java.util.concurrent.Semaphore;
 

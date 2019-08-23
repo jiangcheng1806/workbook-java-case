@@ -1,4 +1,4 @@
-package com.jiangcz.theory.future;
+package com.jiangcz.application.multithread.future;
 
 /**
  * 类名称：CommonCook<br>
@@ -32,7 +32,7 @@ public class CommonCook {
     //网购厨具线程
     static class OnlineShopping extends Thread {
 
-        private Chuju chuju;
+        public Chuju chuju;
 
         @Override
         public void run() {

@@ -1,4 +1,4 @@
-package com.jiangcz.theory.concurrent;
+package com.jiangcz.application.multithread.concurrent;
 
 import java.text.MessageFormat;
 import java.util.concurrent.BrokenBarrierException;
@@ -6,24 +6,19 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * 类名称：CyclicBarrierTest<br>
- * 类描述：当四个线程都到达barrier状态后，会从四个线程中选择一个线程去执行<br>
+ * 类描述：每个写入线程执行完写数据操作之后，就在等待其他线程写入操作完毕。当所有线程线程写入操作完毕之后，所有线程就继续进行后续的操作了。<br>
  * 创建时间：2019年04月19日<br>
  *
  * @author jiangcheng
  * @version 1.0.0
  */
 
-public class CyclicBarrierTest1 {
+public class CyclicBarrierTest {
 
 
     public static void main(String[] args) {
         int N  = 4;
-        CyclicBarrier barrier = new CyclicBarrier(N, new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(MessageFormat.format("当前线程 {0}",Thread.currentThread().getName()));
-            }
-        });
+        CyclicBarrier barrier = new CyclicBarrier(N);
         for (int i = 0; i < N; i++) {
             new Writer(barrier).start();
         }

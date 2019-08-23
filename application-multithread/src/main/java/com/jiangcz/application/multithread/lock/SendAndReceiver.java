@@ -1,4 +1,4 @@
-package com.jiangcz.theory.lock;
+package com.jiangcz.application.multithread.lock;
 
 import java.util.concurrent.Exchanger;
 

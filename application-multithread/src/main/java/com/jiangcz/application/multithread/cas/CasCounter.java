@@ -1,4 +1,4 @@
-package com.jiangcz.theory.cas;
+package com.jiangcz.application.multithread.cas;
 
 /**
  * 类名称：CasCounter<br>

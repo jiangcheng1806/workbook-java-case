@@ -1,4 +1,4 @@
-package com.jiangcz.theory.future;
+package com.jiangcz.application.multithread.future;
 
 import java.util.concurrent.ConcurrentHashMap;
 

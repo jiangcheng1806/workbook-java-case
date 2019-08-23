@@ -10,6 +10,7 @@
         <module>application-spring</module>
         <module>application-designpattern</module>
         <module>application-lambda</module>
+        <module>application-multithread</module>
     </modules>
     <packaging>pom</packaging>
 
