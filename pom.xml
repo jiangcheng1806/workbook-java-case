@@ -11,6 +11,8 @@
         <module>application-designpattern</module>
         <module>application-lambda</module>
         <module>application-multithread</module>
+        <module>application-datastructure</module>
+        <module>application-algorithm</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,6 +1,6 @@
 package com.jiangcz.aop;
 
-import com.jiangcz.theory.aop.invocation.Cal;
+import com.jiangcz.application.spring.aop.invocation.Cal;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
