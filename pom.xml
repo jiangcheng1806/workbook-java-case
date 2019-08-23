@@ -13,6 +13,7 @@
         <module>application-multithread</module>
         <module>application-datastructure</module>
         <module>application-algorithm</module>
+        <module>application-messages</module>
     </modules>
     <packaging>pom</packaging>
 
