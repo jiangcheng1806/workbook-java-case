@@ -7,7 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>theories</module>
-        <module>spring-exec</module>
+        <module>spring-application</module>
     </modules>
     <packaging>pom</packaging>
 
