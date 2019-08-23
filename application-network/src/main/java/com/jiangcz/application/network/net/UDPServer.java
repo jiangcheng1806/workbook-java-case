@@ -1,4 +1,4 @@
-package com.jiangcz.theory.net;
+package com.jiangcz.application.network.net;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
