@@ -5,7 +5,11 @@
     <groupId>com.jiangcz</groupId>
     <artifactId>java-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>theories</module>
+        <module>spring-exec</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>java-practice</name>
     <url>http://maven.apache.org</url>
