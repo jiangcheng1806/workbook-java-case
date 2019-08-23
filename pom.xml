@@ -16,6 +16,7 @@
         <module>application-storages</module>
         <module>application-junit</module>
         <module>application-network</module>
+        <module>application-thirdpart</module>
     </modules>
     <packaging>pom</packaging>
 
