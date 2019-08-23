@@ -9,6 +9,7 @@
         <module>theories</module>
         <module>application-spring</module>
         <module>application-designpattern</module>
+        <module>application-lambda</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,4 +1,4 @@
-package com.jiangcz.theory.lambda;
+package com.jiangcz.application.lambda;
 
 import java.util.*;
 import java.util.stream.Collectors;
