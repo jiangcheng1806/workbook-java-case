@@ -3,11 +3,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jiangcz</groupId>
-    <artifactId>practice-base-java</artifactId>
+    <artifactId>multi-applications</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>application-spring</module>
+        <module>application-designpattern</module>
+        <module>application-lambda</module>
+        <module>application-multithread</module>
+        <module>application-datastructure</module>
+        <module>application-algorithm</module>
+        <module>application-messages</module>
+        <module>application-storages</module>
+        <module>application-junit</module>
+        <module>application-network</module>
+        <module>application-thirdpart</module>
+    </modules>
+    <packaging>pom</packaging>
 
-    <name>startup</name>
+    <name>multi-applications</name>
     <url>http://maven.apache.org</url>
 
     <properties>
