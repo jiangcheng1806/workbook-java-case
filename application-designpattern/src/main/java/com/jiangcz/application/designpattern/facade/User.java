@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.facade;
+package com.jiangcz.application.designpattern.facade;
 
 public class User {
 
