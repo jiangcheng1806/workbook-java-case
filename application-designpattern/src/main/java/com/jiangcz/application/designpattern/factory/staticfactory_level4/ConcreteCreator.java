@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.factory.staticfactory_level4;
+package com.jiangcz.application.designpattern.factory.staticfactory_level4;
 
 /**
  * 类名称：ConcreteCreator<br>
