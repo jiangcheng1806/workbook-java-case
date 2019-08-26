@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.observer;
+package com.jiangcz.application.designpattern.observer;
 
 import java.util.Enumeration;
 import java.util.Vector;
