@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.consumer.consumer_02;
+package com.jiangcz.application.designpattern.consumer.consumer_02;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
