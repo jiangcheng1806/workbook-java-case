@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.singleton;
+package com.jiangcz.application.designpattern.singleton;
 
 
 /**
