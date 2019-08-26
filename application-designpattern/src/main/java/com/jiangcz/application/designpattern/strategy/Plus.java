@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.strategy;
+package com.jiangcz.application.designpattern.strategy;
 
 public class Plus extends AbstractCalculator implements ICalculator {
 

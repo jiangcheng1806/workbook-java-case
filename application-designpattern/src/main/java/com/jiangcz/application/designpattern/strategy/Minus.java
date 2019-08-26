@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.strategy;
+package com.jiangcz.application.designpattern.strategy;
 
 public class Minus extends AbstractCalculator implements ICalculator {
 
