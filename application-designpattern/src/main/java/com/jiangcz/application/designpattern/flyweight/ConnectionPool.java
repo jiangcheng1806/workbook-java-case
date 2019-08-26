@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.flyweight;
+package com.jiangcz.application.designpattern.flyweight;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
