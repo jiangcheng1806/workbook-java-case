@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.builder;
+package com.jiangcz.application.designpattern.builder;
 
 public class Test {
 

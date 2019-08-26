@@ -1,8 +1,8 @@
-package com.jiangcz.theory.designpattern.factory.staticfactory_level2;
+package com.jiangcz.application.designpattern.factory.staticfactory_level2;
 
-import com.jiangcz.theory.designpattern.factory.commonfactory_level1.MailSender;
-import com.jiangcz.theory.designpattern.factory.commonfactory_level1.Sender;
-import com.jiangcz.theory.designpattern.factory.commonfactory_level1.SmsSender;
+import com.jiangcz.application.designpattern.factory.commonfactory_level1.MailSender;
+import com.jiangcz.application.designpattern.factory.commonfactory_level1.Sender;
+import com.jiangcz.application.designpattern.factory.commonfactory_level1.SmsSender;
 
 /**
  * 静态工厂模式就是在多个工厂方法模式的基础上进行静态化从而使使用工厂模式的时候不需要手动创建工厂了

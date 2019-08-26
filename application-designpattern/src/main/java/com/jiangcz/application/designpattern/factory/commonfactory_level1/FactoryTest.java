@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.factory.commonfactory_level1;
+package com.jiangcz.application.designpattern.factory.commonfactory_level1;
 
 /**
  * 
