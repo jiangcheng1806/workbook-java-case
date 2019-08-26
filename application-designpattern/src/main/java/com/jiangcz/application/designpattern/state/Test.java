@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.state;
+package com.jiangcz.application.designpattern.state;
 
 /**
  *
