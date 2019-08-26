@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.command;
+package com.jiangcz.application.designpattern.command;
 
 public interface Command {
 
