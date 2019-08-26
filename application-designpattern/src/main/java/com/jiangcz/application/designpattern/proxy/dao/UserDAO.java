@@ -1,6 +1,6 @@
-package com.jiangcz.theory.designpattern.proxy.dao;
+package com.jiangcz.application.designpattern.proxy.dao;
 
-import com.jiangcz.theory.designpattern.proxy.bean.User;
+import com.jiangcz.application.designpattern.proxy.bean.User;
 
 /**
  * 类名称：UserDAO<br>
