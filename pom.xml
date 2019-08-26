@@ -2,6 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+
     <groupId>com.jiangcz</groupId>
     <artifactId>multi-applications</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -17,6 +23,7 @@
         <module>application-junit</module>
         <module>application-network</module>
         <module>application-thirdpart</module>
+        <module>application-local-cache-manager</module>
     </modules>
     <packaging>pom</packaging>
 
