@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.mediator;
+package com.jiangcz.application.designpattern.mediator;
 
 public abstract class User {
 
