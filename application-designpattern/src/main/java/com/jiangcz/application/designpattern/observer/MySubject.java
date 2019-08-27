@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.observer;
+package com.jiangcz.application.designpattern.observer;
 
 public class MySubject extends AbstractSubject {
 

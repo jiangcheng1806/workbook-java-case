@@ -1,8 +1,8 @@
-package com.jiangcz.theory.designpattern.proxy.daoproxy;
+package com.jiangcz.application.designpattern.proxy.daoproxy;
 
 
-import com.jiangcz.theory.designpattern.proxy.bean.User;
-import com.jiangcz.theory.designpattern.proxy.dao.UserDAO;
+import com.jiangcz.application.designpattern.proxy.bean.User;
+import com.jiangcz.application.designpattern.proxy.dao.UserDAO;
 
 /**
  * 类名称：StaticProxyFactory<br>

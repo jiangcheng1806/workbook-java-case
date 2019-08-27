@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.handlerchain;
+package com.jiangcz.application.designpattern.handlerchain;
 
 public class MyHandler extends AbstractHandler implements Handler {
 

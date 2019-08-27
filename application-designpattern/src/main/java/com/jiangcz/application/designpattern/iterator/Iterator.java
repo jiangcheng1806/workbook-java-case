@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.iterator;
+package com.jiangcz.application.designpattern.iterator;
 
 public interface Iterator {
 

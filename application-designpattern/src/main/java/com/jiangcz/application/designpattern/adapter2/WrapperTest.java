@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.adapter2;
+package com.jiangcz.application.designpattern.adapter2;
 
 
 

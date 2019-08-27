@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.consumer.consumer_01;
+package com.jiangcz.application.designpattern.consumer.consumer_01;
 
 /**
  * 类名称：ProduceConsume<br>

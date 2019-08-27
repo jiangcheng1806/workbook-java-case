@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.interpreter;
+package com.jiangcz.application.designpattern.interpreter;
 
 public interface Expression {
 

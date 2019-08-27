@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.adapter;
+package com.jiangcz.application.designpattern.adapter;
 
 public class Wrapper implements TargetTable {
 

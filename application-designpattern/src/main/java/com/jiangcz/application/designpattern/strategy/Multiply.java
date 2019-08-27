@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.strategy;
+package com.jiangcz.application.designpattern.strategy;
 
 public class Multiply extends AbstractCalculator implements ICalculator {
 

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>designpattern-application</artifactId>
+    <artifactId>application-designpattern</artifactId>
 
 
 </project>

@@ -1,4 +1,4 @@
-	package com.jiangcz.theory.designpattern.iterator;
+	package com.jiangcz.application.designpattern.iterator;
 
 public class MyIterator implements Iterator {
 
@@ -39,6 +39,7 @@ public class MyIterator implements Iterator {
 		
 	}
 
+	@Override
 	public Object first() {
 		// TODO Auto-generated method stub
 		pos = 0;

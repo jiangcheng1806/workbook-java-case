@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.proxy.daoproxy;
+package com.jiangcz.application.designpattern.proxy.daoproxy;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;

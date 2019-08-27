@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.proxy.bean;
+package com.jiangcz.application.designpattern.proxy.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

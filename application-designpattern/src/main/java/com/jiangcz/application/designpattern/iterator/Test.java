@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.iterator;
+package com.jiangcz.application.designpattern.iterator;
 
 /**
  * 顾名思义，迭代器模式就是顺序访问聚集中的对象，一般来说，集合中非常常见，如果对集合类比较熟悉的话，
