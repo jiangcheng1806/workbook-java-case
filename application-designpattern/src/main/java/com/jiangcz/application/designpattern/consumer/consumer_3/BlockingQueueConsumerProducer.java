@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.consumer.consumer_3;
+package com.jiangcz.application.designpattern.consumer.consumer_3;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;

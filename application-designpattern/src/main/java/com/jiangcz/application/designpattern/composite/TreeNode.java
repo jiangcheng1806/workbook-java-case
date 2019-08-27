@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.composite;
+package com.jiangcz.application.designpattern.composite;
 
 import java.util.Enumeration;
 import java.util.Vector;

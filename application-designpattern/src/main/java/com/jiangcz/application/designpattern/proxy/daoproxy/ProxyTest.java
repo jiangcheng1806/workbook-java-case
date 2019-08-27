@@ -1,7 +1,7 @@
-package com.jiangcz.theory.designpattern.proxy.daoproxy;
+package com.jiangcz.application.designpattern.proxy.daoproxy;
 
-import com.jiangcz.theory.designpattern.proxy.dao.UserDAO;
-import com.jiangcz.theory.designpattern.proxy.dao.impl.UserDAOImpl;
+import com.jiangcz.application.designpattern.proxy.dao.UserDAO;
+import com.jiangcz.application.designpattern.proxy.dao.impl.UserDAOImpl;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.template;
+package com.jiangcz.application.designpattern.template;
 
 /**
  * 一个抽象类中，有一个主方法，再定义1...n个方法，

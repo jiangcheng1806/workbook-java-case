@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.factory.abstractfactory2_level3;
+package com.jiangcz.application.designpattern.factory.abstractfactory2_level3;
 
 /**
  * 类名称：Implements1<br>

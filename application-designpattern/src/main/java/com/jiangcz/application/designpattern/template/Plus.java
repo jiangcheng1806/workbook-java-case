@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.template;
+package com.jiangcz.application.designpattern.template;
 
 public class Plus extends AbstractCalculator {
 

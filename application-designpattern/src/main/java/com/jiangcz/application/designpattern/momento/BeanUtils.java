@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.momento;
+package com.jiangcz.application.designpattern.momento;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

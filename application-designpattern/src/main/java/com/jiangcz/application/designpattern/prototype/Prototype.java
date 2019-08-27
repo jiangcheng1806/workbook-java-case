@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.prototype;
+package com.jiangcz.application.designpattern.prototype;
 
 import java.io.*;
 

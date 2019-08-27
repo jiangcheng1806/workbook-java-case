@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.decorator;
+package com.jiangcz.application.designpattern.decorator;
 
 public interface Sourceable {
 

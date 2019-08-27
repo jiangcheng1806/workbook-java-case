@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.visitor;
+package com.jiangcz.application.designpattern.visitor;
 
 public interface Subject {
 

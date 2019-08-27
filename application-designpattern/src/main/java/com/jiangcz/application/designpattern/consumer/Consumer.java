@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.consumer;
+package com.jiangcz.application.designpattern.consumer;
 
 /**
  * 类名称：Consumer<br>

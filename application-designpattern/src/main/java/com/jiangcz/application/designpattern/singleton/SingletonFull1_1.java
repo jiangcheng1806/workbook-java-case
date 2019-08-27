@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.singleton;
+package com.jiangcz.application.designpattern.singleton;
 
 public class SingletonFull1_1 {
 
@@ -15,7 +15,7 @@ public class SingletonFull1_1 {
 	//获取实例的方法
 	
 	/**
-	 * 对getInstance加锁synchronized绝对线程安全,但效率不高,实际上已经退化了串行
+	 * 对getInstance加锁synchronized绝对线程安全,但效率不高,实际上已经退化了串行 也就是每次获取实例都需要加锁 效率不高 已经变成串行
 	 * 
 	 * 对性能不敏感的场景下可以使用
 	 * 

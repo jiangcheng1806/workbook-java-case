@@ -1,4 +1,4 @@
-package com.jiangcz.theory.designpattern.proxy.daoproxy;
+package com.jiangcz.application.designpattern.proxy.daoproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

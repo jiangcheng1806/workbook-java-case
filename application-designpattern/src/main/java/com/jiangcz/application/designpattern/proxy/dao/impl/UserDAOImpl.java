@@ -1,8 +1,8 @@
-package com.jiangcz.theory.designpattern.proxy.dao.impl;
+package com.jiangcz.application.designpattern.proxy.dao.impl;
 
 
-import com.jiangcz.theory.designpattern.proxy.bean.User;
-import com.jiangcz.theory.designpattern.proxy.dao.UserDAO;
+import com.jiangcz.application.designpattern.proxy.bean.User;
+import com.jiangcz.application.designpattern.proxy.dao.UserDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
