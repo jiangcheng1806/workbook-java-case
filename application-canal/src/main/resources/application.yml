@@ -1,3 +1,32 @@
+spring:
+    application:
+        name: application-canal
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        locale: zh
+        default-property-inclusion: non_null
+    datasource:
+        name: canal
+        url: jdbc:mysql://47.97.159.238:3306/joyfarming?useUnicode=true&characterEncoding=UTF8
+        username: root
+        password: root
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
 canal:
   server:
     url: 47.97.159.238  #单机配置,local/dev/test环境使用
@@ -16,4 +45,4 @@ canal:
       cms_articles
     refreshSeconds: 10 #单位：秒
     zkServers: 47.97.159.238:2181 # zookeeper HA高可用配置,forecast/prod环境使用
-    dbname: kuaiche #数据库名称
+    dbname: joyfarming #数据库名称
