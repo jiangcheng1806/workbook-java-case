@@ -1,10 +1,6 @@
 package com.jiangcz.application.canal.sync;
 
 import com.alibaba.otter.canal.protocol.CanalEntry;
-import com.alibaba.otter.canal.protocol.CanalEntry.Column;
-import com.alibaba.otter.canal.protocol.CanalEntry.EventType;
-import com.jiangcz.application.canal.rpc.server.impl.init.DataSyncService;
-import com.jiangcz.application.common.context.BaseContextHandler;
 import com.jiangcz.application.common.util.Spring.SpringContextUtil;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
@@ -107,11 +103,10 @@ public class JsonUtility {
                 //mysql数据同步
                 JSONObject beforeJson = JsonUtility.getJson(beforeColumns);
                 JSONObject afterJson = JsonUtility.getJson(afterColumns);
-                DataSyncService syncCommService = SpringContextUtil.getBean(DataSyncService.class);
-                log.info("tableName: {} ");
-                log.info("eventType: {} ");
-                log.info("beforeJson: {} ");
-                log.info("afterJson: {} ");
+                log.info("tableName: {} ",tableName);
+                log.info("eventType: {} ",eventType);
+                log.info("beforeJson: {} ",beforeJson);
+                log.info("afterJson: {} ",afterJson);
             }
         }
     }
