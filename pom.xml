@@ -24,6 +24,7 @@
         <module>application-network</module>
         <module>application-thirdpart</module>
         <module>application-local-cache-manager</module>
+        <module>application-canal</module>
     </modules>
     <packaging>pom</packaging>
 
