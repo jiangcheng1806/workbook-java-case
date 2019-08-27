@@ -1,4 +1,4 @@
-package com.jiangcz.utils.RSAUtils;
+package com.jiangcz.application.czutils.RSAUtils;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -92,10 +92,10 @@ public class AESUtils {
         //String password = AESUtils.decryptData(contentAZ, "8E6CDA64565E3718");
 
         String random = "Abcdefghijklmnop";
-        String s = com.jiangcz.application.czutils.RSAUtils.encryptByPublicKey(random);
+        String s = RSAUtils.encryptByPublicKey(random);
         System.out.println("AN加密key:"+s);
         String ceshi12313 = AESUtils.encryptData(random, "ceshi12313XYZ");
-        String s2 = com.jiangcz.application.czutils.RSAUtils.decryptByPrivateKey(s);
+        String s2 = RSAUtils.decryptByPrivateKey(s);
         System.out.println("AN加密key:"+s2);
         String s1 = AESUtils.decryptData(random, ceshi12313);
         System.out.println("AN加密key:"+s1);

@@ -5,7 +5,7 @@ package com.jiangcz.application.czutils.excelUtils.excel;
 import com.jiangcz.application.czutils.excelUtils.exception.ExceptionUtil;
 import com.jiangcz.application.czutils.excelUtils.export.AssertUtil;
 import com.jiangcz.application.czutils.excelUtils.export.BaseTypeUtils;
-import com.jiangcz.application.czutils.excelUtils.export.ValueCheckUtil;
+import com.jiangcz.application.czutils.excelUtils.util.ValueCheckUtil;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConstructorUtils;
 import org.apache.commons.lang3.StringUtils;

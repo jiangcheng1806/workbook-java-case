@@ -3,6 +3,7 @@ package com.jiangcz.application.czutils.excelUtils.export;
 import com.jiangcz.application.czutils.excelUtils.excel.ExcelColumn;
 import com.jiangcz.application.czutils.excelUtils.excel.ExcelColumnType;
 import com.jiangcz.application.czutils.excelUtils.excel.IExcelValueHandler;
+import com.jiangcz.application.czutils.excelUtils.util.ValueCheckUtil;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
@@ -30,7 +31,7 @@ public class SimpleExcelExportUtil extends AbstractExcelExportUtil {
 	public static <T> void exportObj2Excel(List<T> objs, String fileTitle,
 										   Map<String, IExcelValueHandler<?>> baseDocHandlers, OutputStream out) {
 
-		if (com.jiangcz.application.czutils.excelUtils.export.ValueCheckUtil.isNullorZeroLength(objs)) {
+		if (ValueCheckUtil.isNullorZeroLength(objs)) {
 			return;
 		}
 		List<ExcelColumn> columns = getExportColumns(objs.get(0).getClass(),
@@ -48,7 +49,7 @@ public class SimpleExcelExportUtil extends AbstractExcelExportUtil {
 	public static <T> void exportObj2Excel(List<T> objs, String fileTitle,
 			OutputStream out) {
 
-		if (com.jiangcz.application.czutils.excelUtils.export.ValueCheckUtil.isNullorZeroLength(objs)) {
+		if (ValueCheckUtil.isNullorZeroLength(objs)) {
 			return;
 		}
 		List<ExcelColumn> columns = getExportColumns(objs.get(0).getClass(), null);
@@ -65,7 +66,7 @@ public class SimpleExcelExportUtil extends AbstractExcelExportUtil {
 	public static <T> void exportObj2Excel(List<T> objs, String fileTitle,
 			OutputStream out,boolean exportColumn) {
 
-		if (com.jiangcz.application.czutils.excelUtils.export.ValueCheckUtil.isNullorZeroLength(objs)) {
+		if (ValueCheckUtil.isNullorZeroLength(objs)) {
 			return;
 		}
 		List<ExcelColumn> columns = getExportColumns(objs.get(0).getClass(), null,exportColumn);

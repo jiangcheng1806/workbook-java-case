@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.jiangcz.utils.RSAUtils;
+package com.jiangcz.application.czutils.RSAUtils;
 
 import java.io.UnsupportedEncodingException;
 

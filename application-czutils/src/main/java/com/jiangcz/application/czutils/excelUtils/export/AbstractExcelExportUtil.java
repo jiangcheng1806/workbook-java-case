@@ -3,6 +3,7 @@ package com.jiangcz.application.czutils.excelUtils.export;
 import com.jiangcz.application.czutils.excelUtils.excel.ExcelColumn;
 import com.jiangcz.application.czutils.excelUtils.excel.ExcelTag;
 import com.jiangcz.application.czutils.excelUtils.excel.IExcelValueHandler;
+import com.jiangcz.application.czutils.excelUtils.util.ValueCheckUtil;
 
 import java.lang.reflect.Field;
 import java.util.*;
@@ -37,7 +38,7 @@ public abstract class AbstractExcelExportUtil {
 		List<ExcelColumn> ret = new ArrayList<ExcelColumn>();
 //		Field[] fields = clazz.getDeclaredFields();
 		List<Field> allFields = getAllFields(new LinkedList<Field>(), clazz);
-		boolean isNullHandlers = com.jiangcz.application.czutils.excelUtils.export.ValueCheckUtil.isNullorZeroLength(baseDocHandlers);
+		boolean isNullHandlers = ValueCheckUtil.isNullorZeroLength(baseDocHandlers);
 
 		for (Field field : allFields) {
 			if (!field.isAnnotationPresent(ExcelTag.class)) {
