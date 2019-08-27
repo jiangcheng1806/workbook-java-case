@@ -25,6 +25,7 @@
         <module>application-thirdpart</module>
         <module>application-local-cache-manager</module>
         <module>application-canal</module>
+        <module>application-czutils</module>
     </modules>
     <packaging>pom</packaging>
 
