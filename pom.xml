@@ -27,6 +27,7 @@
         <module>application-canal</module>
         <module>application-czutils</module>
         <module>application-common</module>
+        <module>application-queuerace</module>
     </modules>
     <packaging>pom</packaging>
 
