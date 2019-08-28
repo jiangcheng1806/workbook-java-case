@@ -39,7 +39,7 @@ public class DemoTester {
         QueueStore queueStore = null;
 
         try {
-            Class queueStoreClass = Class.forName("io.openmessaging.DefaultQueueStoreImpl");
+            Class queueStoreClass = Class.forName("com.jiangcz.application.queuerace.DefaultQueueStoreImpl");
             queueStore = (QueueStore)queueStoreClass.newInstance();
         } catch (Throwable t) {
             t.printStackTrace();
