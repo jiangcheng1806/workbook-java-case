@@ -18,7 +18,9 @@
         <commons-net.version>3.3</commons-net.version>
         <poi.version>3.9</poi.version>
     </properties>
+    <groupId>com.jiangcz</groupId>
     <artifactId>application-common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>

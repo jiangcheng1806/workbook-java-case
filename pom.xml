@@ -25,7 +25,6 @@
         <module>application-thirdpart</module>
         <module>application-local-cache-manager</module>
         <module>application-canal</module>
-        <module>application-czutils</module>
         <module>application-common</module>
         <module>application-queuerace</module>
     </modules>
