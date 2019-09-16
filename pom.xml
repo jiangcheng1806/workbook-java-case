@@ -27,6 +27,7 @@
         <module>application-canal</module>
         <module>application-common</module>
         <module>application-queuerace</module>
+        <module>application-ioc-aop</module>
     </modules>
     <packaging>pom</packaging>
 
