@@ -18,5 +18,10 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.58</version>
         </dependency>
+        <!--<dependency>
+            <groupId>cn.codesheep</groupId>
+            <artifactId>uid-generator</artifactId>
+            <version>1.0</version>
+        </dependency>-->
     </dependencies>
 </project>
