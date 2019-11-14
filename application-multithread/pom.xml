@@ -11,5 +11,11 @@
 
     <artifactId>application-multithread</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.jiangcz</groupId>
+            <artifactId>application-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
