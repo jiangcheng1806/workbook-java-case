@@ -131,10 +131,6 @@
             <version>1.7.25</version>
         </dependency>-->
         <!-- logback日志配置结束 -->
-    </dependencies>
-
-<dependencyManagement>
-    <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -142,5 +138,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-</dependencyManagement>
 </project>
