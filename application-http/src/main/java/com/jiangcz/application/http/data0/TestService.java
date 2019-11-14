@@ -35,7 +35,7 @@ public class TestService {
         log.info("预约查询库区接口参数：【{}】,header参数：【{}】查找对应库区的出库单",requestParamMap,null);
         String param = JacksonUtils.toJSONString(requestParamMap);
         HttpClientUtil httpClientService = new HttpClientUtil();
-        String response = httpClientService.sendPostRequest(testDomain, param, "json");
+        TestStorageResponse response = httpClientService.sendPostRequest(testDomain, requestParamMap, null,TestStorageResponse.class,null);
         log.info("预约查询库区接口参数：【{}】查找对应库区的出库单:【{}】",requestParamMap, JacksonUtils.toJSONString(response));
         /*if (response != null && response.getStatus() != null &&  "0000".equals(response.getStatus())) {
             JSONObject jsonString2 = JSONObject.fromObject(response);
@@ -52,7 +52,7 @@ public class TestService {
 
         TestService testService = new TestService();
 
-        //testService.selectTestRecordVoList(null,null,null);
+        testService.selectTestRecordVoList(null,null,null);
 
 
         System.out.println("--------------");

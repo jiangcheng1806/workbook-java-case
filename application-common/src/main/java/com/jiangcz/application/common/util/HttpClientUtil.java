@@ -4,6 +4,7 @@ import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -23,6 +24,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.pool.PoolStats;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
@@ -38,9 +40,7 @@ import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class HttpClientUtil {
     private static Logger logger = LoggerFactory.getLogger(HttpClientUtil.class);
@@ -370,5 +370,83 @@ public class HttpClientUtil {
             }
         }
         return result;
+    }
+
+    /**
+     *
+     * @param reqURL
+     * @param requestParamMap
+     * @param clazz
+     * @return
+     */
+    public static <T> T sendPostRequest(String reqURL, Map<String, String> requestParamMap, String type, Class<T> clazz, String ua) {
+        String result = RESP_CONTENT;
+        // 设置请求和传输超时时间
+        HttpPost httpPost = new HttpPost(reqURL);
+        T response = null;
+        // 这就有可能会导致服务端接收不到POST过去的参数,比如运行在Tomcat6.0.36中的Servlet,所以我们手工指定CONTENT_TYPE头消息
+        if (type != null && type.length() > 0) {
+            httpPost.setHeader(HTTP.CONTENT_TYPE, "application/json; charset=" + ENCODE_CHARSET);
+        } else {
+            httpPost.setHeader(HTTP.CONTENT_TYPE, "application/x-www-form-urlencoded; charset=" + ENCODE_CHARSET);
+        }
+        if(ua !=null && ua.length()>0){
+            httpPost.setHeader(HTTP.USER_AGENT, ua+"; charset=" + ENCODE_CHARSET);
+        }
+        CloseableHttpResponse httpResponse = null;
+        try {
+
+            List<NameValuePair> getParams = new ArrayList<NameValuePair>();
+            for (String key : requestParamMap.keySet()) {
+                getParams.add(new BasicNameValuePair(key, requestParamMap
+                        .get(key)));
+            }
+            if (getParams != null && !getParams.isEmpty()) {
+                UrlEncodedFormEntity entity=new UrlEncodedFormEntity(getParams,"UTF-8");
+                httpPost.setEntity(entity);
+            }
+            logger.info("开始执行请求：" + reqURL + "params:"+JacksonUtils.toJSONString(getParams));
+            // reqURL = URLDecoder.decode(reqURL, ENCODE_CHARSET);
+            httpResponse = httpClient.execute(httpPost, HttpClientContext.create());
+            HttpEntity entity = httpResponse.getEntity();
+            // 打印响应状态
+            logger.info(httpResponse.getStatusLine().toString());
+            if (null != entity) {
+                result = EntityUtils.toString(entity, ContentType.getOrDefault(entity).getCharset());
+                logger.info("执行请求完毕：" + result);
+                EntityUtils.consume(entity);
+                response = JacksonUtils.parseObject(result,clazz);
+            }
+
+            if (logger.isInfoEnabled()) {
+                logger.info("HttpClient request post url: " + reqURL);
+                logger.info("HttpClient request param: " + JacksonUtils.toJSONString(getParams));
+                logger.info("HttpClient response: " + JacksonUtils.toJSONString(response));
+            }
+        } catch (ConnectTimeoutException cte) {
+            logger.error("请求通信[" + reqURL + "]时连接超时,堆栈轨迹如下", cte);
+        } catch (SocketTimeoutException ste) {
+            logger.error("请求通信[" + reqURL + "]时读取超时,堆栈轨迹如下", ste);
+        } catch (ClientProtocolException cpe) {
+            logger.error("请求通信[" + reqURL + "]时协议异常,堆栈轨迹如下", cpe);
+        } catch (ParseException pe) {
+            logger.error("请求通信[" + reqURL + "]时解析异常,堆栈轨迹如下", pe);
+        } catch (IOException ioe) {
+            logger.error("请求通信[" + reqURL + "]时网络异常,堆栈轨迹如下", ioe);
+        } catch (Exception e) {
+            logger.error("请求通信[" + reqURL + "]时偶遇异常,堆栈轨迹如下", e);
+        } finally {
+            try {
+                if (response != null)
+                    httpResponse.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (httpPost != null) {
+                httpPost.releaseConnection();
+            }
+        }
+
+        return response;
     }
 }
