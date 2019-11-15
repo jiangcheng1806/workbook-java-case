@@ -7,7 +7,7 @@ public class TestRecordVo {
     /**
      * 编号
      */
-    private String Id;
+    private Long Id;
     /**
      * 考核通过有效期（结束日期）
      */

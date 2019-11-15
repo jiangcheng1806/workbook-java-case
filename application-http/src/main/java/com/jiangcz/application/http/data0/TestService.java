@@ -7,10 +7,7 @@ import com.jiangcz.application.common.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 public class TestService {
@@ -37,14 +34,14 @@ public class TestService {
         HttpClientUtil httpClientService = new HttpClientUtil();
         TestStorageResponse response = httpClientService.sendPostRequest(testDomain, requestParamMap, null,TestStorageResponse.class,null);
         log.info("预约查询库区接口参数：【{}】查找对应库区的出库单:【{}】",requestParamMap, JacksonUtils.toJSONString(response));
-        /*if (response != null && response.getStatus() != null &&  "0000".equals(response.getStatus())) {
+        if (response != null && response.getStatus() != null &&  "0000".equals(response.getStatus())) {
             JSONObject jsonString2 = JSONObject.fromObject(response);
             String data = jsonString2.getJSONArray("data").toString();
             if (!StringUtils.isEmpty(data)) {
                 List<TestRecordVo> records = com.alibaba.fastjson.JSONObject.parseArray(data, TestRecordVo.class);
                 list.addAll(records);
             }
-        }*/
+        }
         return list;
     }
 
@@ -52,9 +49,13 @@ public class TestService {
 
         TestService testService = new TestService();
 
-        testService.selectTestRecordVoList(null,null,null);
+        List<TestRecordVo> testRecordVoList = testService.selectTestRecordVoList(null,null,null);
 
+        Collections.sort(testRecordVoList, Comparator.comparing(TestRecordVo::getId));
 
         System.out.println("--------------");
+        log.info(JacksonUtils.toJSONString(testRecordVoList));
+
+
     }
 }

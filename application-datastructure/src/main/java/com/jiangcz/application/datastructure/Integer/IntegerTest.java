@@ -1,5 +1,9 @@
 package com.jiangcz.application.datastructure.Integer;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 类名称：IntegerTest<br>
  * 类描述：<br>
@@ -29,8 +33,22 @@ public class IntegerTest {
 
         System.out.println("i == j :" + (i == j));
 
+        Long l1 = 2553415L;
 
+        Long l2 = 2343416L;
 
+        System.out.println(l1 > l2);
+
+        System.out.println(l1 - l2);
+
+        List<Long> list = new ArrayList<>();
+
+        list.add(l1);
+        list.add(l2);
+
+        Collections.sort(list);
+
+        System.out.println(list);
 
     }
 }
