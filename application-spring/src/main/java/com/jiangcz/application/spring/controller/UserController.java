@@ -8,11 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Controller;
 import redis.clients.jedis.JedisCommands;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 类名称：UserController<br>
@@ -27,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 public class UserController {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String,Object> redisTemplate;
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
@@ -178,5 +183,98 @@ public class UserController {
             }
         };
         return stringRedisTemplate.execute(sessionCallback);
+    }
+    /**
+     * 重试等待次数
+     */
+    private int retryTimes=3;
+
+    /**
+     * 重试等待时间
+     */
+    private int retryAwait=300;
+
+    /**
+     * 可重入获取锁
+     * @param uuid
+     * @return
+     */
+    private long loopForLock(String key, String uuid){
+        long getlockstate = 0;
+        getlockstate = getRedisLock(key,uuid);
+        if(getlockstate ==0){
+            ReentrantLock pauseLock = new ReentrantLock();
+            Condition unpaused = pauseLock.newCondition();
+            try {
+                pauseLock.lock();
+                for (int i =0;getlockstate == 0&i<retryTimes;i++){
+//					System.out.println("重入锁："+i);
+                    getlockstate = getRedisLock(key,uuid);
+                    unpaused.await(retryAwait, TimeUnit.MILLISECONDS);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                pauseLock.unlock();
+            }
+        }
+        return getlockstate;
+    }
+
+    /**
+     * 原子性操作
+     * @param key
+     * @param value
+     * @return
+     */
+    @SuppressWarnings("deprecation")
+    private Long getset(String key, String value) {
+        String luaScript = ""
+                + "\r\nlocal val = redis.call('GET', '" + key + "');"
+                + "\r\nlocal ret= 0;"
+                + "\r\nif val == '" + value + "' then"
+                + "\r\nret =redis.call('DEL','" + key + "');"
+                + "\r\nend"
+                + "\r\nreturn ret";
+        List<String> keys = new ArrayList<String>();
+        RedisScript<Long> script = new DefaultRedisScript<Long>(
+                luaScript, Long.class);
+
+
+        Long ret = redisTemplate
+                .execute(script, keys, new Object[]{});
+        return ret;
+    }
+
+    /**
+     * 原子性操作
+     * @param key
+     * @param millseconds(毫秒)
+     * @param value
+     * @return
+     */
+    @SuppressWarnings("deprecation")
+    private Long setnxpx(String key, int millseconds, String value) {
+        String luaScript = ""
+                + "\r\nlocal ret = tonumber(redis.call('SETNX', '" + key + "','" + value + "'));"
+                + "\r\nredis.call('PEXPIRE','" + key + "','" + millseconds + "');"
+                + "\r\nreturn ret";
+
+        List<String> keys = new ArrayList<String>();
+        RedisScript<Long> script = new DefaultRedisScript<Long>(
+                luaScript, Long.class);
+        Long ret = redisTemplate
+                .execute(script, keys, new Object[]{});
+
+        return ret;
+    }
+    private int lockTimeout=1000 * 60;
+    /**
+     * key锁获取,uuid用于防止误删
+     * @param uuid
+     * @return
+     */
+    private long getRedisLock(String key, String uuid) {
+        return setnxpx(String.valueOf(key), lockTimeout, uuid);
     }
 }
