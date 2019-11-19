@@ -1,4 +1,4 @@
-package utils;
+package com.jiangcz.application.http.utils;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;

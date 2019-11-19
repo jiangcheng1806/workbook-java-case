@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2014 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package utils;
+package com.jiangcz.application.http.utils;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringEscapeUtils;

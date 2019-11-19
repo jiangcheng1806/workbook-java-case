@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2005-2012 springside.org.cn
  */
-package utils;
+package com.jiangcz.application.http.utils;
 
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Base64;
