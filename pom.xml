@@ -22,7 +22,7 @@
         <module>application-junit</module>
         <module>application-network</module>
         <module>application-thirdpart</module>
-        <module>application-local-cache-manager</module>
+        <module>application-localcache</module>
         <module>application-canal</module>
         <module>application-common</module>
         <module>application-queuerace</module>
