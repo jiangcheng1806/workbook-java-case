@@ -1,6 +1,5 @@
-package com.jiangcz.application.http.data0;
+package com.jiangcz.application.redis.data0;
 
-import com.jiangcz.application.common.constant.UCHttpRequest;
 import com.jiangcz.application.common.util.HttpClientUtil;
 import com.jiangcz.application.common.util.JacksonUtils;
 import com.jiangcz.application.common.util.StringUtils;

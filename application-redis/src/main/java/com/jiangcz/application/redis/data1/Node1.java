@@ -1,4 +1,4 @@
-package com.jiangcz.application.http.data1;
+package com.jiangcz.application.redis.data1;
 
 import java.io.Serializable;
 import java.util.List;

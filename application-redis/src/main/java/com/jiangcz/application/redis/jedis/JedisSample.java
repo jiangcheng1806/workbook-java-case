@@ -1,4 +1,4 @@
-package com.jiangcz.application.http.jedis;
+package com.jiangcz.application.redis.jedis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

@@ -1,4 +1,4 @@
-package com.jiangcz.application.http.data1;
+package com.jiangcz.application.redis.data1;
 
 import com.alibaba.fastjson.JSON;
 

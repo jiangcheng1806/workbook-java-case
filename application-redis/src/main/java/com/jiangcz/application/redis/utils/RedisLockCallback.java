@@ -1,4 +1,4 @@
-package com.jiangcz.application.http.utils;
+package com.jiangcz.application.redis.utils;
 
 /**
  * RedisTemplate的回调方法

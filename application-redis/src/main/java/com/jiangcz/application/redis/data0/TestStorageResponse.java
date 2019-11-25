@@ -1,4 +1,4 @@
-package com.jiangcz.application.http.data0;
+package com.jiangcz.application.redis.data0;
 
 import lombok.Data;
 

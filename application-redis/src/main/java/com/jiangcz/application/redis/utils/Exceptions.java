@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2005-2012 springside.org.cn
  */
-package com.jiangcz.application.http.utils;
+package com.jiangcz.application.redis.utils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.PrintWriter;
