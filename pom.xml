@@ -27,7 +27,7 @@
         <module>application-common</module>
         <module>application-queuerace</module>
         <module>application-ioc-aop</module>
-        <module>application-http</module>
+        <module>application-redis</module>
     </modules>
     <packaging>pom</packaging>
 
