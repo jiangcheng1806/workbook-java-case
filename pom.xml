@@ -15,7 +15,7 @@
         <module>application-designpattern</module>
         <module>application-lambda</module>
         <module>application-multithread</module>
-        <module>application-datastructure</module>
+        <module>application-jdk</module>
         <module>application-algorithm</module>
         <module>application-messages</module>
         <module>application-storages</module>

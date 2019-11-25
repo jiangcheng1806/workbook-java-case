@@ -1,6 +1,6 @@
 package com.jiangcz.application.redis;
 
-import org.junit.Test;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import redis.clients.jedis.Jedis;
@@ -10,7 +10,7 @@ import redis.clients.jedis.Jedis;
  */
 public class TestLua {
     @SuppressWarnings({ "resource", "rawtypes" })
-    @Test
+
     public void testLua() {
         // 如果是简单的对象，使用原来的封装会容易一些
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
