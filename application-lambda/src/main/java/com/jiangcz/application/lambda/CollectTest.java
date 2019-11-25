@@ -27,7 +27,8 @@ public class CollectTest {
 
         CollectTest collectTest = new CollectTest();
         //collectTest.testGroupBy();
-        collectTest.testSum();
+        //collectTest.testSum();
+        collectTest.testFilter();
     }
 
     @AllArgsConstructor
@@ -64,7 +65,7 @@ public class CollectTest {
         aList.add(new A(2,"liqian"));
 
         /// 测试 提交
-
+        aList.clear();
         System.out.println(aList);
         aList.stream().filter(a -> a.id > 1).collect(Collectors.toList());
         System.out.println(aList);
