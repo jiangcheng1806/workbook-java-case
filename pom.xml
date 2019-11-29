@@ -13,20 +13,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>application-designpattern</module>
-        <module>application-lambda</module>
-        <module>application-multithread</module>
+        <module>application-concurrent</module>
         <module>application-jdk</module>
         <module>application-algorithm</module>
         <module>application-messages</module>
         <module>application-storages</module>
-        <module>application-junit</module>
         <module>application-network</module>
-        <module>application-thirdpart</module>
-        <module>application-localcache</module>
         <module>application-canal</module>
         <module>application-common</module>
-        <module>application-queuerace</module>
-        <module>application-ioc-aop</module>
+        <module>application-queue</module>
         <module>application-redis</module>
         <module>application-zookeeper</module>
     </modules>
