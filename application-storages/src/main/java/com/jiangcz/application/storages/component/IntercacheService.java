@@ -1,4 +1,4 @@
-package com.jiangcz.application.localcachemanager.component;
+package com.jiangcz.application.storages.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;

@@ -1,4 +1,4 @@
-package com.jiangcz.application.localcachemanager.component;
+package com.jiangcz.application.storages.component;
 
 import java.util.concurrent.TimeUnit;
 
