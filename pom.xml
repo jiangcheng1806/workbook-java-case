@@ -27,7 +27,7 @@
     </modules>
     <packaging>pom</packaging>
 
-    <name>multi-applications</name>
+    <name>applications</name>
     <url>http://maven.apache.org</url>
 
     <properties>
