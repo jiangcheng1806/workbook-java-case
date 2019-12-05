@@ -5,7 +5,9 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class FairReentrantLockTest {
-    static Lock lock = new ReentrantLock(true);
+    //公平锁
+    //static Lock lock = new ReentrantLock(true);
+    static Lock lock = new ReentrantLock(false);
 
     public static void main(String[] args) throws InterruptedException {
 
