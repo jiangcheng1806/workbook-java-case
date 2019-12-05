@@ -1,6 +1,4 @@
-package com.jiangcz.application.jdk.lock;
-
-import com.jiangcz.application.jdk.lambda.LambdaTest;
+package com.jiangcz.application.jdk.lock.reentrantlock;
 
 import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;

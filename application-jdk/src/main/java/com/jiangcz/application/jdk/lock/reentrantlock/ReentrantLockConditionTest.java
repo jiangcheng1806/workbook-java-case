@@ -1,4 +1,4 @@
-package com.jiangcz.application.jdk.lock;
+package com.jiangcz.application.jdk.lock.reentrantlock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
