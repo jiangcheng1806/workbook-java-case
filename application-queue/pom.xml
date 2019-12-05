@@ -11,9 +11,6 @@
 
     <artifactId>application-queue</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>aa</module>
-    </modules>
 
 
 </project>
