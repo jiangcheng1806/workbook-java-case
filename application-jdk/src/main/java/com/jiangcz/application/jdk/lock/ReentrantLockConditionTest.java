@@ -5,6 +5,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 等待通知
+ *
+ * await 之前必须获得锁
+ * await 释放锁直到其他线程调用 该 condition 的signal 方法唤醒线程
+ *
+ *
  */
 public class ReentrantLockConditionTest {
     static ReentrantLock lock = new ReentrantLock();
