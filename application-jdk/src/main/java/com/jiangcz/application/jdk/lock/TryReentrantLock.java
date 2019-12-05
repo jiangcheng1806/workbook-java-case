@@ -5,9 +5,9 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 可重入锁可以解决死锁问题 构建两个线程占用两个锁 获取锁的次序不一致 造成死锁
+ * 使用try-lock可以解决死锁问题
  */
-public class InteruptReentrantLockTest {
+public class TryReentrantLock {
     static Lock lock1 = new ReentrantLock();
     static Lock lock2 = new ReentrantLock();
     public static void main(String[] args) throws InterruptedException {
@@ -16,7 +16,6 @@ public class InteruptReentrantLockTest {
         Thread thread1 = new Thread(new ThreadDemo(lock2, lock1));//该线程先获取锁2,再获取锁1
         thread.start();
         thread1.start();
-        thread.interrupt();//是第一个线程中断
     }
 
     static class ThreadDemo implements Runnable {
@@ -29,9 +28,13 @@ public class InteruptReentrantLockTest {
         @Override
         public void run() {
             try {
-                firstLock.lockInterruptibly();
-                TimeUnit.MILLISECONDS.sleep(10);//更好的触发死锁
-                secondLock.lockInterruptibly();
+                while(!lock1.tryLock()){
+                    TimeUnit.MILLISECONDS.sleep(10);
+                }
+                while(!lock2.tryLock()){
+                    lock1.unlock();
+                    TimeUnit.MILLISECONDS.sleep(10);
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
