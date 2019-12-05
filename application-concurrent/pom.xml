@@ -17,5 +17,10 @@
             <artifactId>application-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.io7m.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 </project>
