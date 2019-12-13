@@ -1,4 +1,4 @@
-package com.jiangcz.theory.bitwise;
+package com.jiangcz.application.algorithm.bitwise;
 
 /**
  * 类名称：LogicalOperation<br>
