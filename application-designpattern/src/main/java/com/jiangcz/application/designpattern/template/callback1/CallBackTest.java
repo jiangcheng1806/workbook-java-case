@@ -1,4 +1,4 @@
-package com.jiangcz.application.designpattern.template.callback;
+package com.jiangcz.application.designpattern.template.callback1;
 
 /**
  * 类名称：CallBackTest<br>
