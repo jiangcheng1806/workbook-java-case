@@ -1,17 +1,15 @@
 package com.jiangcz.application.jdk.reflect.construct;
 
+import com.jiangcz.application.common.util.JacksonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
+import java.lang.reflect.*;
 
 public class ConstructTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
         Logger logger = LoggerFactory.getLogger(ConstructTest.class);
 
@@ -23,6 +21,24 @@ public class ConstructTest {
         for (Constructor<?> constructor : constructors) {
             logger.debug("构造方法 {}", constructor);
         }
+
+        // 指定参数的构造方法
+// getConstructor方法传入的参数为Class类型的对象,代表的是参数类型
+// 想获得上面的带一个String参数的构造方法,就需要传入String的Class对象
+        Constructor<A> constructor = aClass.getConstructor(String.class);
+        logger.debug("指定参数的构造方法 {}", constructor);
+
+        // 构造方法参数
+        Class<?>[] parameterTypes = constructor.getParameterTypes();
+        for (Class<?> parameterType : parameterTypes) {
+            logger.debug("构造方法参数 {}", parameterType);
+        }
+
+        // 利用Constructor对象实例化一个类
+// 刚才我们获取的是只带一个String参数的构造方法,所以实例化对象,只需传入一个String参数即可
+        A a = constructor.newInstance("小明");
+        logger.debug("{}", JacksonUtils.toJSONString(a));
+
 
         // 获取全限定类名（包含包名）
         String name = aClass.getName();
