@@ -8,4 +8,5 @@ public class A {
     public A(String s){
         this.s = s;
     }
+    public A(){}
 }
