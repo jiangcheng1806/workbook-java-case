@@ -1,4 +1,4 @@
-package com.jiangcz.application.designpattern.template.callback1;
+package com.jiangcz.application.designpattern.callback.callback1;
 
 /**
  * 类名称：FooBar<br>

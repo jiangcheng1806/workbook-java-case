@@ -1,4 +1,4 @@
-package com.jiangcz.application.designpattern.template.callback2;
+package com.jiangcz.application.designpattern.callback.callback2;
 
 public class CustomProvider implements Provider {
     @Override
