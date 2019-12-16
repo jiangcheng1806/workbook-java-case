@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * 方法测试
+ */
 public class MethodTest {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         Logger logger = LoggerFactory.getLogger(MethodTest.class);

@@ -2,6 +2,9 @@ package com.jiangcz.application.jdk.reflect.construct;
 
 import java.lang.annotation.Annotation;
 
+/**
+ * 注解测试
+ */
 public class AnnotationTest {
     public static void main(String[] args) {
         Class<A> aClass = A.class;
