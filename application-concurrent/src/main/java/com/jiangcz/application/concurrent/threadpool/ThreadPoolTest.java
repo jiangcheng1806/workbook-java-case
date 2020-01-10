@@ -1,4 +1,4 @@
-package com.jiangcz.theory.threadpool;
+package com.jiangcz.application.concurrent.threadpool;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

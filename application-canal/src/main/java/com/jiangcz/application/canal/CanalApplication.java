@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @version 1.0.0
  */
 @SpringBootApplication
-@ComponentScan({"com.jiangcz.application"})
 public class CanalApplication {
     public static void main(String[] args) {
         SpringApplication.run(CanalApplication.class,args);
