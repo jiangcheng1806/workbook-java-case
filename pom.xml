@@ -9,7 +9,7 @@
     </parent>-->
 
     <groupId>com.jiangcz</groupId>
-    <artifactId>applications</artifactId>
+    <artifactId>applications-demos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>application-designpattern</module>
@@ -24,6 +24,8 @@
         <module>application-queue</module>
         <module>application-redis</module>
         <module>application-zookeeper</module>
+        <module>application-nacos</module>
+        <module>application-elk</module>
     </modules>
     <packaging>pom</packaging>
 
