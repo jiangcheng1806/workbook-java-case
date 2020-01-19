@@ -1,4 +1,4 @@
-package com.jiangcz.application.jdk.threadlocal;
+package com.jiangcz.application.jdk.threadlocal.inheritable;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

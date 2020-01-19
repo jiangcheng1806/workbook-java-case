@@ -1,4 +1,4 @@
-package com.jiangcz.application.jdk.threadlocal;
+package com.jiangcz.application.jdk.threadlocal.inheritable;
 
 public class InheritableThreadLocalUtils {
     private static final ThreadLocal<Integer> local = new InheritableThreadLocal<>();
