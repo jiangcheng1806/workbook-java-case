@@ -29,7 +29,7 @@
     </modules>
     <packaging>pom</packaging>
 
-    <name>applications</name>
+    <name>workbook-java-case</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -46,6 +46,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.1.RELEASE</version>
             </plugin>
         </plugins>
     </build>
