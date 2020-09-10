@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>application-canal</artifactId>
+    <artifactId>workbook-canal</artifactId>-case
 
     <properties>
         <hystrix.version>1.5.12</hystrix.version>
@@ -232,7 +232,7 @@
         </dependency>
         <dependency>
             <groupId>com.jiangcz</groupId>
-            <artifactId>application-common</artifactId>
+            <artifactId>workbook-common</artifactId>-case
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

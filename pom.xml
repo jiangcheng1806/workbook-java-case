@@ -12,20 +12,20 @@
     <artifactId>workbook-java-case</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>application-designpattern</module>
-        <module>application-concurrent</module>
-        <module>application-jdk</module>
-        <module>application-algorithm</module>
-        <module>application-messages</module>
-        <module>application-storages</module>
-        <module>application-network</module>
-        <module>application-canal</module>
-        <module>application-common</module>
-        <module>application-queue</module>
-        <module>application-redis</module>
-        <module>application-zookeeper</module>
-        <module>application-nacos</module>
-        <module>application-elk</module>
+        <module>workbook-designpattern-case</module>
+        <module>workbook-concurrent-case</module>
+        <module>workbook-jdk-case</module>
+        <module>workbook-algorithm-case</module>
+        <module>workbook-messages-case</module>
+        <module>workbook-storages-case</module>
+        <module>workbook-network-case</module>
+        <module>workbook-canal-case</module>
+        <module>workbook-common-case</module>
+        <module>workbook-queue-case</module>
+        <module>workbook-redis-case</module>
+        <module>workbook-zookeeper-case</module>
+        <module>workbook-nacos-case</module>
+        <module>workbook-elk-case</module>
     </modules>
     <packaging>pom</packaging>
 
