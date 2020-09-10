@@ -1,6 +1,5 @@
 package com.jiangc.workbook.jdk.reflect.construct;
 
-import com.jiangc.workbook.common.util.JacksonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +39,7 @@ public class ConstructTest {
         // 利用Constructor对象实例化一个类
 // 刚才我们获取的是只带一个String参数的构造方法,所以实例化对象,只需传入一个String参数即可
         A a = constructor.newInstance("小明");
-        logger.debug("{}", JacksonUtils.toJSONString(a));
+        //logger.debug("{}", JacksonUtils.toJSONString(a));
 
 
         // 获取全限定类名（包含包名）

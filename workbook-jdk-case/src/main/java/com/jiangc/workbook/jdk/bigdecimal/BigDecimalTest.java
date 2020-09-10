@@ -1,8 +1,5 @@
 package com.jiangc.workbook.jdk.bigdecimal;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.jiangc.workbook.common.util.JacksonUtils;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +21,17 @@ public class BigDecimalTest {
         System.out.println(">>>>>>>>>>>>>>>>>d1 compare d3 :"+(d1.compareTo(d3)));
 
         String result = "{\"status\":\"S\",\"msg\":null,\"count\":1,\"data\":{\"total\":34.0,\"strList\":[\"321692\"]}}";
-        JsonNode data = JacksonUtils.readAnyNode(result, "data");
-        ElementVo elementVo = JacksonUtils.parseObject(JacksonUtils.toJSONString(data),ElementVo.class);
+        //JsonNode data = JacksonUtils.readAnyNode(result, "data");
+        //ElementVo elementVo = JacksonUtils.parseObject(JacksonUtils.toJSONString(data),ElementVo.class);
 
-        System.out.println("elementVo>>>>>>>>>>>"+JacksonUtils.toJSONString(elementVo));
+        //System.out.println("elementVo>>>>>>>>>>>"+JacksonUtils.toJSONString(elementVo));
 
 
-        System.out.println("mal1>>>>"+elementVo.getTotal());
+        //System.out.println("mal1>>>>"+elementVo.getTotal());
 
         System.out.println("mal2>>>>"+new BigDecimal(34.0));
 
-        System.out.println(elementVo.getTotal().equals(new BigDecimal(34.0)));
+        //System.out.println(elementVo.getTotal().equals(new BigDecimal(34.0)));
 
         List<AccVo> accVoList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
