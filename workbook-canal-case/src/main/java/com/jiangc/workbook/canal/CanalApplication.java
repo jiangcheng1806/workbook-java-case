@@ -1,0 +1,19 @@
+package com.jiangc.workbook.canal;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * 类名称：CanalApplication<br>
+ * 类描述：<br>
+ * 创建时间：2019年08月27日<br>
+ *
+ * @author jiangcheng
+ * @version 1.0.0
+ */
+@SpringBootApplication
+public class CanalApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(CanalApplication.class,args);
+    }
+}
