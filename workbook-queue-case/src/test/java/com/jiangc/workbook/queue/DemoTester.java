@@ -39,7 +39,7 @@ public class DemoTester {
         QueueStore queueStore = null;
 
         try {
-            Class queueStoreClass = Class.forName("com.jiangcz.application.com.jiangcz.application.queue.DefaultQueueStoreImpl");
+            Class queueStoreClass = Class.forName("com.jiangc.workbook.application.com.jiangc.workbook.application.queue.DefaultQueueStoreImpl");
             queueStore = (QueueStore)queueStoreClass.newInstance();
         } catch (Throwable t) {
             t.printStackTrace();

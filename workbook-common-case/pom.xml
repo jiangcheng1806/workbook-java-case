@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>workbook-demos-case</artifactId>
-        <groupId>com.jiangcz</groupId>
+        <artifactId>workbook-java-case</artifactId>
+        <groupId>com.jiangc.workbook</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -18,8 +18,8 @@
         <commons-net.version>3.3</commons-net.version>
         <poi.version>3.9</poi.version>
     </properties>
-    <groupId>com.jiangcz</groupId>
-    <artifactId>workbook-common</artifactId>-case
+    <groupId>com.jiangc.workbook</groupId>
+    <artifactId>workbook-common-case</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <dependencies>
         <dependency>
