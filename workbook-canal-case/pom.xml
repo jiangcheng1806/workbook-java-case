@@ -8,9 +8,7 @@
         <version>2.1.6.RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>workbook-canal</artifactId>-case
-
+    <artifactId>workbook-canal-case</artifactId>
     <properties>
         <hystrix.version>1.5.12</hystrix.version>
         <!-- MyBatis Generator -->
@@ -28,7 +26,6 @@
         <pagehelper.version>4.1.1</pagehelper.version>
         <druid.version>1.1.3</druid.version>
     </properties>
-
     <dependencies>
 
         <!-- json工具类 -->
