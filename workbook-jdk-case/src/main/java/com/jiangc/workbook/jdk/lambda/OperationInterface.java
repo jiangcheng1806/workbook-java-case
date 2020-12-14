@@ -11,7 +11,7 @@ import org.junit.Test;
  * @version 1.0.0
  */
 
-public class LambdaInterface {
+public class OperationInterface {
     //所需接口
     interface MathOperation {
         int operate(int a,int b);
