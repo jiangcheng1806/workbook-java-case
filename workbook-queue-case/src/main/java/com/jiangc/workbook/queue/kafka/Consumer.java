@@ -4,10 +4,14 @@ package com.jiangc.workbook.queue.kafka;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.header.Header;
+import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-import java.util.Arrays;
-import java.util.Properties;
+import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Consumer {
     //static Logger log = Logger.getLogger(Consumer.class);
@@ -46,7 +50,18 @@ public class Consumer {
 
             ConsumerRecords<String, String> records = consumer.poll(MQDict.CONSUMER_POLL_TIME_OUT);
             records.forEach((ConsumerRecord<String, String> record)->{
-                System.out.println("revice: key ==="+record.key()+" value ===="+record.value()+" topic ==="+record.topic());
+
+                Headers headers = record.headers();
+                Iterable<Header> msgType = headers.headers("msgType");
+                for (Header header : msgType) {
+                    String s = new String(header.value());
+                    System.out.println(s+"--->消息类型");
+
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    String now = sdf.format(new Date());
+
+                    System.out.println(now+"-->revice: topic ==="+record.topic()+" msgType ==="+s+" value ===="+record.value());
+                }
             });
         }
     }
