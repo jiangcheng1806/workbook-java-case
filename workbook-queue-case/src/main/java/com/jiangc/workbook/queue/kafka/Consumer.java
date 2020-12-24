@@ -55,12 +55,10 @@ public class Consumer {
                 Iterable<Header> msgType = headers.headers("msgType");
                 for (Header header : msgType) {
                     String s = new String(header.value());
-                    System.out.println(s+"--->消息类型");
-
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String now = sdf.format(new Date());
-
-                    System.out.println(now+"-->revice: topic ==="+record.topic()+" msgType ==="+s+" value ===="+record.value());
+                    System.err.println(s+"--->消息类型"+now+"-->revice: topic ==="+record.topic()+" msgType ==="+s);
+                    System.out.println(" value ===="+record.value());
                 }
             });
         }

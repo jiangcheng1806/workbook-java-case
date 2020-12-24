@@ -42,6 +42,7 @@ public class Producer {
         ProducerRecord<String , String> record = null;
         for (int i = 0; i < 100; i++) {
             record = new ProducerRecord<String, String>(MQDict.PRODUCER_TOPIC, "value"+i);
+
             //发送消息
             producer.send(record, new Callback() {
                 @Override
