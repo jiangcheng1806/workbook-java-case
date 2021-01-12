@@ -7,6 +7,8 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.header.Header;
 import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 import java.text.SimpleDateFormat;
@@ -14,7 +16,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Consumer {
-    //static Logger log = Logger.getLogger(Consumer.class);
+    static Logger log = LoggerFactory.getLogger(Consumer.class);
 
     private static KafkaConsumer<String,String> consumer;
 
@@ -23,7 +25,7 @@ public class Consumer {
      */
     static {
         Properties configs = initConfig();
-        consumer = new KafkaConsumer<String, String>(configs);
+        consumer = new KafkaConsumer<>(configs);
         consumer.subscribe(Arrays.asList(MQDict.CONSUMER_TOPIC));
     }
     /**
@@ -57,8 +59,9 @@ public class Consumer {
                     String s = new String(header.value());
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String now = sdf.format(new Date());
-                    System.err.println(s+"--->消息类型"+now+"-->revice: topic ==="+record.topic()+" msgType ==="+s);
-                    System.out.println(" value ===="+record.value());
+                    System.out.println("---------------------------------------------------------------------------");
+                    System.out.println(s+"--->消息类型 " + now+"-->revice: topic ==="+record.topic()+" msgType ==="+s);
+                    System.out.println("value--->"+record.value());
                 }
             });
         }
