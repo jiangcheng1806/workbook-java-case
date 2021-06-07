@@ -80,7 +80,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.1.11</version>
+            <version>1.2.0</version>
         </dependency>
         <!--可以使用logback配置-->
         <!--隐式导入logback的pom文件会导致log4j配置失效-->
